@@ -1,7 +1,7 @@
 import {CwdFS, Filename, NativePath, PortablePath, ZipOpenFS} from '@yarnpkg/fslib';
 import {xfs, npath, ppath, toFilename}                        from '@yarnpkg/fslib';
 import {getLibzipPromise}                                     from '@yarnpkg/libzip';
-import {execute}                                              from '@yarnpkg/shell';
+import {execute, ShellBuiltin}                                from '@yarnpkg/shell';
 import capitalize                                             from 'lodash/capitalize';
 import pLimit                                                 from 'p-limit';
 
@@ -28,12 +28,14 @@ enum PackageManager {
   Pnpm = `pnpm`,
 }
 
-async function makePathWrapper(location: PortablePath, name: Filename, argv0: NativePath, args: Array<string> = []) {
+async function makePathWrapper(location: PortablePath, name: Filename, argv0: NativePath, args: Array<string> = [], builtins?: Map<string, Array<string>>) {
   if (process.platform === `win32`)
     await xfs.writeFilePromise(ppath.format({dir: location, name, ext: `.cmd`}), `@"${argv0}" ${args.map(arg => `"${arg.replace(`"`, `""`)}"`).join(` `)} %*\n`);
 
   await xfs.writeFilePromise(ppath.join(location, name), `#!/bin/sh\nexec "${argv0}" ${args.map(arg => `'${arg.replace(/'/g, `'"'"'`)}'`).join(` `)} "$@"\n`);
   await xfs.chmodPromise(ppath.join(location, name), 0o755);
+
+  builtins?.set(name, [argv0, ...args]);
 }
 
 async function detectPackageManager(location: PortablePath) {
@@ -59,7 +61,7 @@ async function detectPackageManager(location: PortablePath) {
   return null;
 }
 
-export async function makeScriptEnv({project, binFolder, lifecycleScript}: {project?: Project, binFolder: PortablePath, lifecycleScript?: string}) {
+export async function makeScriptEnv({project, binFolder, lifecycleScript, builtins}: {project?: Project, binFolder: PortablePath, lifecycleScript?: string; builtins?: Map<string, Array<string>>}) {
   const scriptEnv: {[key: string]: string} = {};
   for (const [key, value] of Object.entries(process.env))
     if (typeof value !== `undefined`)
@@ -73,13 +75,13 @@ export async function makeScriptEnv({project, binFolder, lifecycleScript}: {proj
 
   // Register some binaries that must be made available in all subprocesses
   // spawned by Yarn (we thus ensure that they always use the right version)
-  await makePathWrapper(binFolder, `node` as Filename, process.execPath);
+  await makePathWrapper(binFolder, `node` as Filename, process.execPath, [], builtins);
 
   if (YarnVersion !== null) {
-    await makePathWrapper(binFolder, `run` as Filename, process.execPath, [process.argv[1], `run`]);
-    await makePathWrapper(binFolder, `yarn` as Filename, process.execPath, [process.argv[1]]);
-    await makePathWrapper(binFolder, `yarnpkg` as Filename, process.execPath, [process.argv[1]]);
-    await makePathWrapper(binFolder, `node-gyp` as Filename, process.execPath, [process.argv[1], `run`, `--top-level`, `node-gyp`]);
+    await makePathWrapper(binFolder, `run` as Filename, process.execPath, [process.argv[1], `run`], builtins);
+    await makePathWrapper(binFolder, `yarn` as Filename, process.execPath, [process.argv[1]], builtins);
+    await makePathWrapper(binFolder, `yarnpkg` as Filename, process.execPath, [process.argv[1]], builtins);
+    await makePathWrapper(binFolder, `node-gyp` as Filename, process.execPath, [process.argv[1], `run`, `--top-level`, `node-gyp`], builtins);
   }
 
   if (project)
@@ -107,7 +109,7 @@ export async function makeScriptEnv({project, binFolder, lifecycleScript}: {proj
       project,
       scriptEnv,
       async (name: string, argv0: string, args: Array<string>) => {
-        return await makePathWrapper(binFolder, toFilename(name), argv0, args);
+        return await makePathWrapper(binFolder, toFilename(name), argv0, args, builtins);
       },
     );
   }
@@ -287,14 +289,30 @@ type ExecutePackageScriptOptions = {
 
 export async function executePackageScript(locator: Locator, scriptName: string, args: Array<string>, {cwd, project, stdin, stdout, stderr}: ExecutePackageScriptOptions): Promise<number> {
   return await xfs.mktempPromise(async binFolder => {
-    const {manifest, env, cwd: realCwd} = await initializePackageEnvironment(locator, {project, binFolder, cwd, lifecycleScript: scriptName});
+    const {manifest, env, cwd: realCwd, builtins: rawBuiltins} = await initializePackageEnvironment(locator, {project, binFolder, cwd, lifecycleScript: scriptName});
 
     const script = manifest.scripts.get(scriptName);
     if (typeof script === `undefined`)
       return 1;
 
+    const builtins: Record<string, ShellBuiltin> = {};
+
+    for (const [commandName, commandArgs] of rawBuiltins) {
+      builtins[commandName] = async (args, opts, state) => {
+        const {code} = await execUtils.pipevp(commandArgs[0], [...commandArgs.slice(1), ...args], {
+          cwd: state.cwd,
+          env: state.environment,
+          stdin: state.stdin,
+          stdout: state.stdout,
+          stderr: state.stderr,
+        });
+
+        return code;
+      };
+    }
+
     const realExecutor = async () => {
-      return await execute(script, args, {cwd: realCwd, env, stdin, stdout, stderr});
+      return await execute(script, args, {cwd: realCwd, env, stdin, stdout, stderr, builtins});
     };
 
     const executor = await project.configuration.reduceHook(hooks => {
@@ -330,10 +348,12 @@ async function initializePackageEnvironment(locator: Locator, {project, binFolde
     if (!linker)
       throw new Error(`The package ${structUtils.prettyLocator(project.configuration, pkg)} isn't supported by any of the available linkers`);
 
-    const env = await makeScriptEnv({project, binFolder, lifecycleScript});
+    const builtins = new Map<string, Array<string>>();
+
+    const env = await makeScriptEnv({project, binFolder, lifecycleScript, builtins});
 
     for (const [binaryName, [, binaryPath]] of await getPackageAccessibleBinaries(locator, {project}))
-      await makePathWrapper(binFolder, toFilename(binaryName), process.execPath, [binaryPath]);
+      await makePathWrapper(binFolder, toFilename(binaryName), process.execPath, [binaryPath], builtins);
 
     const packageLocation = await linker.findPackageLocation(pkg, linkerOptions);
     const packageFs = new CwdFS(packageLocation, {baseFs: zipOpenFs});
@@ -342,7 +362,7 @@ async function initializePackageEnvironment(locator: Locator, {project, binFolde
     if (typeof cwd === `undefined`)
       cwd = packageLocation;
 
-    return {manifest, binFolder, env, cwd};
+    return {manifest, binFolder, env, cwd, builtins};
   }, {
     libzip: await getLibzipPromise(),
   });
