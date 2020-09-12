@@ -7069,6 +7069,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/eslint", [
+        ["npm:7.2.2", {
+          "packageLocation": "./.yarn/cache/@types-eslint-npm-7.2.2-6d28b3ccaf-b51f46c0eb.zip/node_modules/@types/eslint/",
+          "packageDependencies": [
+            ["@types/eslint", "npm:7.2.2"],
+            ["@types/estree", "npm:0.0.45"],
+            ["@types/json-schema", "npm:7.0.6"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/eslint-scope", [
+        ["npm:3.7.0", {
+          "packageLocation": "./.yarn/cache/@types-eslint-scope-npm-3.7.0-7c68026d97-1ee912a956.zip/node_modules/@types/eslint-scope/",
+          "packageDependencies": [
+            ["@types/eslint-scope", "npm:3.7.0"],
+            ["@types/eslint", "npm:7.2.2"],
+            ["@types/estree", "npm:0.0.45"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/eslint-visitor-keys", [
         ["npm:1.0.0", {
           "packageLocation": "./.yarn/cache/@types-eslint-visitor-keys-npm-1.0.0-a300061b93-48d1f32631.zip/node_modules/@types/eslint-visitor-keys/",
@@ -7079,10 +7101,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/estree", [
-        ["npm:0.0.42", {
-          "packageLocation": "./.yarn/cache/@types-estree-npm-0.0.42-3373bdd17f-78b4c71a50.zip/node_modules/@types/estree/",
+        ["npm:0.0.45", {
+          "packageLocation": "./.yarn/cache/@types-estree-npm-0.0.45-71d6bd2510-9d339cbcf2.zip/node_modules/@types/estree/",
           "packageDependencies": [
-            ["@types/estree", "npm:0.0.42"]
+            ["@types/estree", "npm:0.0.45"]
           ],
           "linkType": "HARD",
         }]
@@ -7290,6 +7312,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-json-schema-npm-7.0.4-e9c65098ca-5094037431.zip/node_modules/@types/json-schema/",
           "packageDependencies": [
             ["@types/json-schema", "npm:7.0.4"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:7.0.6", {
+          "packageLocation": "./.yarn/cache/@types-json-schema-npm-7.0.6-b307979e18-820cabe35a.zip/node_modules/@types/json-schema/",
+          "packageDependencies": [
+            ["@types/json-schema", "npm:7.0.6"]
           ],
           "linkType": "HARD",
         }]
@@ -7640,15 +7669,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["@types/source-list-map", [
-        ["npm:0.1.2", {
-          "packageLocation": "./.yarn/cache/@types-source-list-map-npm-0.1.2-1983e10da7-191f0e3b05.zip/node_modules/@types/source-list-map/",
-          "packageDependencies": [
-            ["@types/source-list-map", "npm:0.1.2"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["@types/ssri", [
         ["npm:6.0.1", {
           "packageLocation": "./.yarn/cache/@types-ssri-npm-6.0.1-da6c21e6d2-8c77eb7947.zip/node_modules/@types/ssri/",
@@ -7893,18 +7913,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/webpack-merge", "npm:4.1.5"],
             ["@types/webpack", "npm:4.32.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["@types/webpack-sources", [
-        ["npm:1.4.0", {
-          "packageLocation": "./.yarn/cache/@types-webpack-sources-npm-1.4.0-7215104c9f-fc237a6e8b.zip/node_modules/@types/webpack-sources/",
-          "packageDependencies": [
-            ["@types/webpack-sources", "npm:1.4.0"],
-            ["@types/node", "npm:10.12.18"],
-            ["@types/source-list-map", "npm:0.1.2"],
-            ["source-map", "npm:0.7.3"]
           ],
           "linkType": "HARD",
         }]
@@ -8416,7 +8424,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@webpack-cli/logger", "virtual:11eacdd532c6d9b32e1887b608775374b4273d1e65f5f9ce1f73f88d150a4314b750eb22534d4c867a169368484578131cc4b0f04eceb27c7e35a375a17d0865#npm:1.0.1-alpha.4"],
             ["@types/webpack", null],
-            ["webpack", "npm:5.0.0-beta.17"]
+            ["webpack", "virtual:16110bda3ce959c103b1979c5d750ceb8ac9cfbd2049c118b6278e46e65aa65fd17e71e04a0ce5f75b7ca3203efd8e9c9b03c948a76c7f4bca807539915b5cfc#npm:5.0.0-beta.30"]
           ],
           "packagePeers": [
             "@types/webpack",
@@ -8430,6 +8438,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@webpack-cli/logger", "virtual:7aee127304dc95be1013a5768dcb7a1de9d65fbb71e5cb99aeb6bd050f1c61c7495836b797b34aab4877eda17c41626b72153fb7c7fb2142098b8521bda15f4b#npm:1.0.1-alpha.4"],
             ["@types/webpack", null],
             ["webpack", null]
+          ],
+          "packagePeers": [
+            "@types/webpack",
+            "webpack"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:9517d80781d149b305598e24e8735e83d62bd5ed66f0c3dfde86c1b8201215c89d5f6a65c8bce07acd7e2e14d2898c8703dd0150e6c92272a7f67003acfa0ba3#npm:1.0.1-alpha.4", {
+          "packageLocation": "./.yarn/$$virtual/@webpack-cli-logger-virtual-cde11d3c83/0/cache/@webpack-cli-logger-npm-1.0.1-alpha.4-d13160a141-2d1afc8ee8.zip/node_modules/@webpack-cli/logger/",
+          "packageDependencies": [
+            ["@webpack-cli/logger", "virtual:9517d80781d149b305598e24e8735e83d62bd5ed66f0c3dfde86c1b8201215c89d5f6a65c8bce07acd7e2e14d2898c8703dd0150e6c92272a7f67003acfa0ba3#npm:1.0.1-alpha.4"],
+            ["@types/webpack", null],
+            ["webpack", "virtual:4bb0e72ae00ec402a28e80560124ee13357b1a5221665b7175877ddc6b8b2b98eebe4584a111245801ecf7cecb9de577d076505c0dbcf9292aaff35440a2302f#npm:5.0.0-beta.30"]
           ],
           "packagePeers": [
             "@types/webpack",
@@ -8491,7 +8512,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/terser-webpack-plugin", "npm:3.0.0"],
             ["@types/typescript", "npm:2.0.0"],
             ["@types/webpack-merge", "npm:4.1.5"],
-            ["@types/webpack-sources", "npm:1.4.0"],
             ["@yarnpkg/cli", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#workspace:packages/yarnpkg-cli"],
             ["@yarnpkg/core", "workspace:packages/yarnpkg-core"],
             ["@yarnpkg/fslib", "workspace:packages/yarnpkg-fslib"],
@@ -8503,14 +8523,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["filesize", "npm:4.1.2"],
             ["fork-ts-checker-webpack-plugin", "virtual:bfbe9d431aeea4f38ef0fbf5648a2193599d78433ad7f02d311def1742a6ccbefa9bf478308b848e37d3e342050fd5dd8b15514a9173e3fca5e1ba5c4271c000#npm:5.0.0"],
             ["semver", "npm:7.3.2"],
-            ["terser-webpack-plugin", "virtual:f9bb67dfd69024370ec3034670580f61299de48db54e56b7b7f6be955f4b2d12b5a289b8059d2552dd17249e4be8d65829a6642d3165c21478efdb56c7a064e2#npm:3.0.4"],
+            ["terser-webpack-plugin", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:3.0.4"],
             ["ts-loader", "virtual:bfbe9d431aeea4f38ef0fbf5648a2193599d78433ad7f02d311def1742a6ccbefa9bf478308b848e37d3e342050fd5dd8b15514a9173e3fca5e1ba5c4271c000#npm:7.0.5"],
             ["tslib", "npm:1.13.0"],
             ["typescript", "patch:typescript@npm%3A3.9.5#builtin<compat/typescript>::version=3.9.5&hash=5b02a2"],
             ["val-loader", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:2.1.1"],
-            ["webpack", "npm:5.0.0-beta.17"],
-            ["webpack-merge", "npm:4.2.2"],
-            ["webpack-sources", "npm:1.4.3"]
+            ["webpack", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:5.0.0-beta.30"],
+            ["webpack-merge", "npm:4.2.2"]
           ],
           "packagePeers": [
             "@types/typescript",
@@ -8528,7 +8547,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/terser-webpack-plugin", "npm:3.0.0"],
             ["@types/typescript", null],
             ["@types/webpack-merge", "npm:4.1.5"],
-            ["@types/webpack-sources", "npm:1.4.0"],
             ["@yarnpkg/cli", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#workspace:packages/yarnpkg-cli"],
             ["@yarnpkg/core", "workspace:packages/yarnpkg-core"],
             ["@yarnpkg/fslib", "workspace:packages/yarnpkg-fslib"],
@@ -8540,14 +8558,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["filesize", "npm:4.1.2"],
             ["fork-ts-checker-webpack-plugin", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:5.0.0"],
             ["semver", "npm:7.3.2"],
-            ["terser-webpack-plugin", "virtual:f9bb67dfd69024370ec3034670580f61299de48db54e56b7b7f6be955f4b2d12b5a289b8059d2552dd17249e4be8d65829a6642d3165c21478efdb56c7a064e2#npm:3.0.4"],
+            ["terser-webpack-plugin", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:3.0.4"],
             ["ts-loader", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:7.0.5"],
             ["tslib", "npm:1.13.0"],
             ["typescript", "patch:typescript@npm%3A3.9.5#builtin<compat/typescript>::version=3.9.5&hash=5b02a2"],
             ["val-loader", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:2.1.1"],
-            ["webpack", "npm:5.0.0-beta.17"],
-            ["webpack-merge", "npm:4.2.2"],
-            ["webpack-sources", "npm:1.4.3"]
+            ["webpack", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:5.0.0-beta.30"],
+            ["webpack-merge", "npm:4.2.2"]
           ],
           "packagePeers": [
             "@types/typescript",
@@ -8564,7 +8581,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/semver", "npm:7.1.0"],
             ["@types/terser-webpack-plugin", "npm:3.0.0"],
             ["@types/webpack-merge", "npm:4.1.5"],
-            ["@types/webpack-sources", "npm:1.4.0"],
             ["@yarnpkg/cli", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#workspace:packages/yarnpkg-cli"],
             ["@yarnpkg/core", "workspace:packages/yarnpkg-core"],
             ["@yarnpkg/fslib", "workspace:packages/yarnpkg-fslib"],
@@ -8576,14 +8592,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["filesize", "npm:4.1.2"],
             ["fork-ts-checker-webpack-plugin", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:5.0.0"],
             ["semver", "npm:7.3.2"],
-            ["terser-webpack-plugin", "virtual:f9bb67dfd69024370ec3034670580f61299de48db54e56b7b7f6be955f4b2d12b5a289b8059d2552dd17249e4be8d65829a6642d3165c21478efdb56c7a064e2#npm:3.0.4"],
+            ["terser-webpack-plugin", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:3.0.4"],
             ["ts-loader", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:7.0.5"],
             ["tslib", "npm:1.13.0"],
             ["typescript", "patch:typescript@npm%3A3.9.5#builtin<compat/typescript>::version=3.9.5&hash=5b02a2"],
             ["val-loader", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:2.1.1"],
-            ["webpack", "npm:5.0.0-beta.17"],
-            ["webpack-merge", "npm:4.2.2"],
-            ["webpack-sources", "npm:1.4.3"]
+            ["webpack", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:5.0.0-beta.30"],
+            ["webpack-merge", "npm:4.2.2"]
           ],
           "linkType": "SOFT",
         }]
@@ -10037,9 +10052,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/pnpify", "virtual:16110bda3ce959c103b1979c5d750ceb8ac9cfbd2049c118b6278e46e65aa65fd17e71e04a0ce5f75b7ca3203efd8e9c9b03c948a76c7f4bca807539915b5cfc#workspace:packages/yarnpkg-pnpify"],
             ["tslib", "npm:1.13.0"],
             ["typescript", "patch:typescript@npm%3A3.9.5#builtin<compat/typescript>::version=3.9.5&hash=5b02a2"],
-            ["webpack", "npm:5.0.0-beta.17"],
-            ["webpack-cli", "virtual:16110bda3ce959c103b1979c5d750ceb8ac9cfbd2049c118b6278e46e65aa65fd17e71e04a0ce5f75b7ca3203efd8e9c9b03c948a76c7f4bca807539915b5cfc#npm:4.0.0-beta.8"],
-            ["webpack-sources", "npm:1.4.3"]
+            ["webpack", "virtual:16110bda3ce959c103b1979c5d750ceb8ac9cfbd2049c118b6278e46e65aa65fd17e71e04a0ce5f75b7ca3203efd8e9c9b03c948a76c7f4bca807539915b5cfc#npm:5.0.0-beta.30"],
+            ["webpack-cli", "virtual:16110bda3ce959c103b1979c5d750ceb8ac9cfbd2049c118b6278e46e65aa65fd17e71e04a0ce5f75b7ca3203efd8e9c9b03c948a76c7f4bca807539915b5cfc#npm:4.0.0-beta.8"]
           ],
           "linkType": "SOFT",
         }]
@@ -10215,6 +10229,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["acorn", "npm:7.3.1"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:7.4.0", {
+          "packageLocation": "./.yarn/cache/acorn-npm-7.4.0-8e5a67d17a-a25b12d9e8.zip/node_modules/acorn/",
+          "packageDependencies": [
+            ["acorn", "npm:7.4.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["acorn-dynamic-import", [
@@ -10337,6 +10358,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["uri-js", "npm:4.2.2"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:6.12.4", {
+          "packageLocation": "./.yarn/cache/ajv-npm-6.12.4-c4dcb5109f-50d72b0a10.zip/node_modules/ajv/",
+          "packageDependencies": [
+            ["ajv", "npm:6.12.4"],
+            ["fast-deep-equal", "npm:3.1.1"],
+            ["fast-json-stable-stringify", "npm:2.0.0"],
+            ["json-schema-traverse", "npm:0.4.1"],
+            ["uri-js", "npm:4.2.2"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["ajv-errors", [
@@ -10361,6 +10393,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ajv-keywords", "virtual:b668f124277280c5cab9400d7040d66d5a7531a8f1d3407b5bc9ff5c4f110b6ef3c2c2c757681610c7110ea14ea1039f45a1f2b99c6a7a9bb9fd6d72044c79e1#npm:3.4.1"],
             ["@types/ajv", null],
             ["ajv", "npm:6.12.2"]
+          ],
+          "packagePeers": [
+            "@types/ajv",
+            "ajv"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:f84d18c473fad3c01e1cf352f81ad13de804ca40da5bf6e752464a2e78dcb097ad579b06da5ff33a55ba9957fb9c74909b99fc5e215420a3f9b5dc87ad71363b#npm:3.5.2", {
+          "packageLocation": "./.yarn/$$virtual/ajv-keywords-virtual-11d24a6cf1/0/cache/ajv-keywords-npm-3.5.2-0e391b70e2-01f26c2923.zip/node_modules/ajv-keywords/",
+          "packageDependencies": [
+            ["ajv-keywords", "virtual:f84d18c473fad3c01e1cf352f81ad13de804ca40da5bf6e752464a2e78dcb097ad579b06da5ff33a55ba9957fb9c74909b99fc5e215420a3f9b5dc87ad71363b#npm:3.5.2"],
+            ["@types/ajv", null],
+            ["ajv", "npm:6.12.4"]
           ],
           "packagePeers": [
             "@types/ajv",
@@ -11372,7 +11417,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["mkdirp", "npm:0.5.5"],
             ["pify", "npm:4.0.1"],
             ["schema-utils", "npm:2.7.0"],
-            ["webpack", "npm:5.0.0-beta.17"]
+            ["webpack", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:5.0.0-beta.30"]
           ],
           "packagePeers": [
             "@babel/core",
@@ -12512,6 +12557,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["glob", "npm:7.1.6"],
             ["infer-owner", "npm:1.0.4"],
             ["lru-cache", "npm:5.1.1"],
+            ["minipass", "npm:3.1.3"],
+            ["minipass-collect", "npm:1.0.2"],
+            ["minipass-flush", "npm:1.0.5"],
+            ["minipass-pipeline", "npm:1.2.2"],
+            ["mkdirp", "npm:1.0.4"],
+            ["p-map", "npm:4.0.0"],
+            ["promise-inflight", "virtual:dec026a54dcf82113e9ac6cee69e389dd8793e777ffdae5ac53f8378950be1892a428a32405732c112d4f0a3e4b49a3fbda9f6663e6bdf5b56c327b33c70a786#npm:1.0.1"],
+            ["rimraf", "npm:3.0.2"],
+            ["ssri", "npm:8.0.0"],
+            ["tar", "npm:6.0.2"],
+            ["unique-filename", "npm:1.1.1"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:15.0.5", {
+          "packageLocation": "./.yarn/cache/cacache-npm-15.0.5-5c6c90d2e8-8e371cbf3c.zip/node_modules/cacache/",
+          "packageDependencies": [
+            ["cacache", "npm:15.0.5"],
+            ["@npmcli/move-file", "npm:1.0.1"],
+            ["chownr", "npm:2.0.0"],
+            ["fs-minipass", "npm:2.0.0"],
+            ["glob", "npm:7.1.6"],
+            ["infer-owner", "npm:1.0.4"],
+            ["lru-cache", "npm:6.0.0"],
             ["minipass", "npm:3.1.3"],
             ["minipass-collect", "npm:1.0.2"],
             ["minipass-flush", "npm:1.0.5"],
@@ -15662,12 +15731,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:5.0.0-beta.4", {
-          "packageLocation": "./.yarn/cache/enhanced-resolve-npm-5.0.0-beta.4-1398915999-1d81e38533.zip/node_modules/enhanced-resolve/",
+        ["npm:5.0.0-beta.10", {
+          "packageLocation": "./.yarn/cache/enhanced-resolve-npm-5.0.0-beta.10-8e1349d6e1-25ecaee8cc.zip/node_modules/enhanced-resolve/",
           "packageDependencies": [
-            ["enhanced-resolve", "npm:5.0.0-beta.4"],
+            ["enhanced-resolve", "npm:5.0.0-beta.10"],
             ["graceful-fs", "npm:4.2.4"],
-            ["tapable", "npm:2.0.0-beta.9"]
+            ["tapable", "npm:2.0.0-beta.11"]
           ],
           "linkType": "HARD",
         }]
@@ -16171,6 +16240,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["estraverse", "npm:4.2.0"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:5.1.0", {
+          "packageLocation": "./.yarn/cache/eslint-scope-npm-5.1.0-2f7f4b93bb-4a0e97979a.zip/node_modules/eslint-scope/",
+          "packageDependencies": [
+            ["eslint-scope", "npm:5.1.0"],
+            ["esrecurse", "npm:4.2.1"],
+            ["estraverse", "npm:4.2.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["eslint-utils", [
@@ -16305,6 +16383,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/events-npm-3.0.0-2f2fd551aa-de1dfe1452.zip/node_modules/events/",
           "packageDependencies": [
             ["events", "npm:3.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:3.2.0", {
+          "packageLocation": "./.yarn/cache/events-npm-3.2.0-342ccffd74-6ea52b160c.zip/node_modules/events/",
+          "packageDependencies": [
+            ["events", "npm:3.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -22900,6 +22985,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["supports-color", "npm:7.1.0"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:26.3.0", {
+          "packageLocation": "./.yarn/cache/jest-worker-npm-26.3.0-e1f6959752-6b7190ef8f.zip/node_modules/jest-worker/",
+          "packageDependencies": [
+            ["jest-worker", "npm:26.3.0"],
+            ["@types/node", "npm:10.12.18"],
+            ["merge-stream", "npm:2.0.0"],
+            ["supports-color", "npm:7.1.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["jimp", [
@@ -23540,10 +23635,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:3.1.0", {
-          "packageLocation": "./.yarn/cache/loader-runner-npm-3.1.0-a8ea46c600-5686ef8c17.zip/node_modules/loader-runner/",
+        ["npm:4.0.0", {
+          "packageLocation": "./.yarn/cache/loader-runner-npm-4.0.0-5fc24d44c5-cf0f276bc9.zip/node_modules/loader-runner/",
           "packageDependencies": [
-            ["loader-runner", "npm:3.1.0"]
+            ["loader-runner", "npm:4.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -24033,6 +24128,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["lru-cache", "npm:5.1.1"],
             ["yallist", "npm:3.0.3"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:6.0.0", {
+          "packageLocation": "./.yarn/cache/lru-cache-npm-6.0.0-b4c8668fe1-b8b78353d2.zip/node_modules/lru-cache/",
+          "packageDependencies": [
+            ["lru-cache", "npm:6.0.0"],
+            ["yallist", "npm:4.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -25125,6 +25228,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["neo-async", "npm:2.6.1"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:2.6.2", {
+          "packageLocation": "./.yarn/cache/neo-async-npm-2.6.2-75d6902586-34a8f53091.zip/node_modules/neo-async/",
+          "packageDependencies": [
+            ["neo-async", "npm:2.6.2"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["neon-js", [
@@ -26169,6 +26279,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/p-limit-npm-3.0.1-dabadbec51-54c5bf187d.zip/node_modules/p-limit/",
           "packageDependencies": [
             ["p-limit", "npm:3.0.1"],
+            ["p-try", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:3.0.2", {
+          "packageLocation": "./.yarn/cache/p-limit-npm-3.0.2-cf6c70eb96-1eb23d6ea7.zip/node_modules/p-limit/",
+          "packageDependencies": [
+            ["p-limit", "npm:3.0.2"],
             ["p-try", "npm:2.0.0"]
           ],
           "linkType": "HARD",
@@ -30317,6 +30435,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ajv-keywords", "virtual:b668f124277280c5cab9400d7040d66d5a7531a8f1d3407b5bc9ff5c4f110b6ef3c2c2c757681610c7110ea14ea1039f45a1f2b99c6a7a9bb9fd6d72044c79e1#npm:3.4.1"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:2.7.1", {
+          "packageLocation": "./.yarn/cache/schema-utils-npm-2.7.1-f84d18c473-3851bcc7e4.zip/node_modules/schema-utils/",
+          "packageDependencies": [
+            ["schema-utils", "npm:2.7.1"],
+            ["@types/json-schema", "npm:7.0.6"],
+            ["ajv", "npm:6.12.4"],
+            ["ajv-keywords", "virtual:f84d18c473fad3c01e1cf352f81ad13de804ca40da5bf6e752464a2e78dcb097ad579b06da5ff33a55ba9957fb9c74909b99fc5e215420a3f9b5dc87ad71363b#npm:3.5.2"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["scroll-behavior", [
@@ -32223,10 +32351,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:2.0.0-beta.9", {
-          "packageLocation": "./.yarn/cache/tapable-npm-2.0.0-beta.9-f864df88fb-6c2854afe2.zip/node_modules/tapable/",
+        ["npm:2.0.0-beta.11", {
+          "packageLocation": "./.yarn/cache/tapable-npm-2.0.0-beta.11-fb6235fada-e4c750918a.zip/node_modules/tapable/",
           "packageDependencies": [
-            ["tapable", "npm:2.0.0-beta.9"]
+            ["tapable", "npm:2.0.0-beta.11"]
           ],
           "linkType": "HARD",
         }]
@@ -32382,9 +32510,85 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["source-map-support", "npm:0.5.19"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:5.3.1", {
+          "packageLocation": "./.yarn/cache/terser-npm-5.3.1-c1530f8c70-383db380fe.zip/node_modules/terser/",
+          "packageDependencies": [
+            ["terser", "npm:5.3.1"],
+            ["commander", "npm:2.20.0"],
+            ["source-map", "npm:0.6.1"],
+            ["source-map-support", "npm:0.5.19"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["terser-webpack-plugin", [
+        ["virtual:334e20b3839479d7caded933eeb713ba43bdef5de274a5fdc9dade2c4821dd796e39a4c5094a3d5fe8b72ea8d18d4d2ee111623834be95425cbb1bb6193708ec#npm:4.2.0", {
+          "packageLocation": "./.yarn/$$virtual/terser-webpack-plugin-virtual-7f5cd53c14/0/cache/terser-webpack-plugin-npm-4.2.0-be1568bc61-2e322629b7.zip/node_modules/terser-webpack-plugin/",
+          "packageDependencies": [
+            ["terser-webpack-plugin", "virtual:334e20b3839479d7caded933eeb713ba43bdef5de274a5fdc9dade2c4821dd796e39a4c5094a3d5fe8b72ea8d18d4d2ee111623834be95425cbb1bb6193708ec#npm:4.2.0"],
+            ["@types/webpack", null],
+            ["cacache", "npm:15.0.5"],
+            ["find-cache-dir", "npm:3.3.1"],
+            ["jest-worker", "npm:26.3.0"],
+            ["p-limit", "npm:3.0.2"],
+            ["schema-utils", "npm:2.7.1"],
+            ["serialize-javascript", "npm:4.0.0"],
+            ["source-map", "npm:0.6.1"],
+            ["terser", "npm:5.3.1"],
+            ["webpack", "virtual:16110bda3ce959c103b1979c5d750ceb8ac9cfbd2049c118b6278e46e65aa65fd17e71e04a0ce5f75b7ca3203efd8e9c9b03c948a76c7f4bca807539915b5cfc#npm:5.0.0-beta.30"],
+            ["webpack-sources", "npm:1.4.3"]
+          ],
+          "packagePeers": [
+            "@types/webpack",
+            "webpack"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:9483b134cadfdfbc6ce4ef0862bfd07363d9e869471fc031d492f3354530d3e706236bbd8aff8f3f0ded0e0bac0e58a4154386bc7273f63fdcf8530313ad24da#npm:4.2.0", {
+          "packageLocation": "./.yarn/$$virtual/terser-webpack-plugin-virtual-fdea202aa6/0/cache/terser-webpack-plugin-npm-4.2.0-be1568bc61-2e322629b7.zip/node_modules/terser-webpack-plugin/",
+          "packageDependencies": [
+            ["terser-webpack-plugin", "virtual:9483b134cadfdfbc6ce4ef0862bfd07363d9e869471fc031d492f3354530d3e706236bbd8aff8f3f0ded0e0bac0e58a4154386bc7273f63fdcf8530313ad24da#npm:4.2.0"],
+            ["@types/webpack", null],
+            ["cacache", "npm:15.0.5"],
+            ["find-cache-dir", "npm:3.3.1"],
+            ["jest-worker", "npm:26.3.0"],
+            ["p-limit", "npm:3.0.2"],
+            ["schema-utils", "npm:2.7.1"],
+            ["serialize-javascript", "npm:4.0.0"],
+            ["source-map", "npm:0.6.1"],
+            ["terser", "npm:5.3.1"],
+            ["webpack", "virtual:4bb0e72ae00ec402a28e80560124ee13357b1a5221665b7175877ddc6b8b2b98eebe4584a111245801ecf7cecb9de577d076505c0dbcf9292aaff35440a2302f#npm:5.0.0-beta.30"],
+            ["webpack-sources", "npm:1.4.3"]
+          ],
+          "packagePeers": [
+            "@types/webpack",
+            "webpack"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:3.0.4", {
+          "packageLocation": "./.yarn/$$virtual/terser-webpack-plugin-virtual-e04c6f4941/0/cache/terser-webpack-plugin-npm-3.0.4-b9b84b4331-e345e6b3aa.zip/node_modules/terser-webpack-plugin/",
+          "packageDependencies": [
+            ["terser-webpack-plugin", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:3.0.4"],
+            ["@types/webpack", null],
+            ["cacache", "npm:15.0.4"],
+            ["find-cache-dir", "npm:3.3.1"],
+            ["jest-worker", "npm:26.0.0"],
+            ["p-limit", "npm:3.0.1"],
+            ["schema-utils", "npm:2.7.0"],
+            ["serialize-javascript", "npm:4.0.0"],
+            ["source-map", "npm:0.6.1"],
+            ["terser", "npm:4.7.0"],
+            ["webpack", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:5.0.0-beta.30"],
+            ["webpack-sources", "npm:1.4.3"]
+          ],
+          "packagePeers": [
+            "@types/webpack",
+            "webpack"
+          ],
+          "linkType": "HARD",
+        }],
         ["virtual:e073844e153b92b319dc2d9b0f6ae20a05893b49f2b56ff72631b73967313ef744d0a2d62f52dda20ccf963d6092e0c06e90d20a3c0b6f831e756347e8a70b13#npm:1.4.3", {
           "packageLocation": "./.yarn/$$virtual/terser-webpack-plugin-virtual-e87d304f01/0/cache/terser-webpack-plugin-npm-1.4.3-ca4ed5d001-5c58ea5353.zip/node_modules/terser-webpack-plugin/",
           "packageDependencies": [
@@ -32407,20 +32611,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["virtual:f9bb67dfd69024370ec3034670580f61299de48db54e56b7b7f6be955f4b2d12b5a289b8059d2552dd17249e4be8d65829a6642d3165c21478efdb56c7a064e2#npm:3.0.4", {
-          "packageLocation": "./.yarn/$$virtual/terser-webpack-plugin-virtual-7d33e1f1e0/0/cache/terser-webpack-plugin-npm-3.0.4-b9b84b4331-e345e6b3aa.zip/node_modules/terser-webpack-plugin/",
+        ["virtual:fe42553600eefb75e03656a3dc1c299442e3377486c03945b6ccf3ea9e525773b22474f2ac2ba9bbd837c94fb1c62450151590a17fdde311f0e49efe5eec2ca7#npm:4.2.0", {
+          "packageLocation": "./.yarn/$$virtual/terser-webpack-plugin-virtual-f25f4e5ff6/0/cache/terser-webpack-plugin-npm-4.2.0-be1568bc61-2e322629b7.zip/node_modules/terser-webpack-plugin/",
           "packageDependencies": [
-            ["terser-webpack-plugin", "virtual:f9bb67dfd69024370ec3034670580f61299de48db54e56b7b7f6be955f4b2d12b5a289b8059d2552dd17249e4be8d65829a6642d3165c21478efdb56c7a064e2#npm:3.0.4"],
+            ["terser-webpack-plugin", "virtual:fe42553600eefb75e03656a3dc1c299442e3377486c03945b6ccf3ea9e525773b22474f2ac2ba9bbd837c94fb1c62450151590a17fdde311f0e49efe5eec2ca7#npm:4.2.0"],
             ["@types/webpack", null],
-            ["cacache", "npm:15.0.4"],
+            ["cacache", "npm:15.0.5"],
             ["find-cache-dir", "npm:3.3.1"],
-            ["jest-worker", "npm:26.0.0"],
-            ["p-limit", "npm:3.0.1"],
-            ["schema-utils", "npm:2.7.0"],
+            ["jest-worker", "npm:26.3.0"],
+            ["p-limit", "npm:3.0.2"],
+            ["schema-utils", "npm:2.7.1"],
             ["serialize-javascript", "npm:4.0.0"],
             ["source-map", "npm:0.6.1"],
-            ["terser", "npm:4.7.0"],
-            ["webpack", "npm:5.0.0-beta.17"],
+            ["terser", "npm:5.3.1"],
+            ["webpack", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:5.0.0-beta.30"],
             ["webpack-sources", "npm:1.4.3"]
           ],
           "packagePeers": [
@@ -34262,7 +34466,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/webpack", null],
             ["loader-utils", "npm:2.0.0"],
             ["schema-utils", "npm:2.7.0"],
-            ["webpack", "npm:5.0.0-beta.17"]
+            ["webpack", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:5.0.0-beta.30"]
           ],
           "packagePeers": [
             "@types/webpack",
@@ -34458,8 +34662,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tslib", "npm:1.13.0"],
             ["typescript", "patch:typescript@npm%3A3.9.5#builtin<compat/typescript>::version=3.9.5&hash=5b02a2"],
             ["vsce", "npm:1.76.1"],
-            ["webpack", "npm:5.0.0-beta.17"],
-            ["webpack-cli", "virtual:16110bda3ce959c103b1979c5d750ceb8ac9cfbd2049c118b6278e46e65aa65fd17e71e04a0ce5f75b7ca3203efd8e9c9b03c948a76c7f4bca807539915b5cfc#npm:4.0.0-beta.8"]
+            ["webpack", "virtual:4bb0e72ae00ec402a28e80560124ee13357b1a5221665b7175877ddc6b8b2b98eebe4584a111245801ecf7cecb9de577d076505c0dbcf9292aaff35440a2302f#npm:5.0.0-beta.30"],
+            ["webpack-cli", "virtual:4bb0e72ae00ec402a28e80560124ee13357b1a5221665b7175877ddc6b8b2b98eebe4584a111245801ecf7cecb9de577d076505c0dbcf9292aaff35440a2302f#npm:4.0.0-beta.8"]
           ],
           "linkType": "SOFT",
         }]
@@ -34535,10 +34739,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:2.0.0-beta.13", {
-          "packageLocation": "./.yarn/cache/watchpack-npm-2.0.0-beta.13-39378309be-404d5c3c08.zip/node_modules/watchpack/",
+        ["npm:2.0.0-beta.15", {
+          "packageLocation": "./.yarn/cache/watchpack-npm-2.0.0-beta.15-47d1c848c3-61145a3f87.zip/node_modules/watchpack/",
           "packageDependencies": [
-            ["watchpack", "npm:2.0.0-beta.13"],
+            ["watchpack", "npm:2.0.0-beta.15"],
             ["glob-to-regexp", "npm:0.4.1"],
             ["graceful-fs", "npm:4.1.15"]
           ],
@@ -34621,32 +34825,105 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:5.0.0-beta.17", {
-          "packageLocation": "./.yarn/cache/webpack-npm-5.0.0-beta.17-f9bb67dfd6-b69e171e0d.zip/node_modules/webpack/",
+        ["virtual:16110bda3ce959c103b1979c5d750ceb8ac9cfbd2049c118b6278e46e65aa65fd17e71e04a0ce5f75b7ca3203efd8e9c9b03c948a76c7f4bca807539915b5cfc#npm:5.0.0-beta.30", {
+          "packageLocation": "./.yarn/$$virtual/webpack-virtual-334e20b383/0/cache/webpack-npm-5.0.0-beta.30-fc780673ae-fc95c4cfe9.zip/node_modules/webpack/",
           "packageDependencies": [
-            ["webpack", "npm:5.0.0-beta.17"],
-            ["@types/estree", "npm:0.0.42"],
+            ["webpack", "virtual:16110bda3ce959c103b1979c5d750ceb8ac9cfbd2049c118b6278e46e65aa65fd17e71e04a0ce5f75b7ca3203efd8e9c9b03c948a76c7f4bca807539915b5cfc#npm:5.0.0-beta.30"],
+            ["@types/eslint-scope", "npm:3.7.0"],
+            ["@types/estree", "npm:0.0.45"],
             ["@webassemblyjs/ast", "npm:1.9.0"],
             ["@webassemblyjs/helper-module-context", "npm:1.9.0"],
             ["@webassemblyjs/wasm-edit", "npm:1.9.0"],
             ["@webassemblyjs/wasm-parser", "npm:1.9.0"],
-            ["acorn", "npm:7.3.1"],
+            ["acorn", "npm:7.4.0"],
             ["chrome-trace-event", "npm:1.0.2"],
-            ["enhanced-resolve", "npm:5.0.0-beta.4"],
-            ["eslint-scope", "npm:5.0.0"],
-            ["events", "npm:3.0.0"],
+            ["enhanced-resolve", "npm:5.0.0-beta.10"],
+            ["eslint-scope", "npm:5.1.0"],
+            ["events", "npm:3.2.0"],
             ["glob-to-regexp", "npm:0.4.1"],
-            ["graceful-fs", "npm:4.1.15"],
+            ["graceful-fs", "npm:4.2.4"],
             ["json-parse-better-errors", "npm:1.0.2"],
-            ["loader-runner", "npm:3.1.0"],
+            ["loader-runner", "npm:4.0.0"],
             ["mime-types", "npm:2.1.27"],
-            ["neo-async", "npm:2.6.1"],
+            ["neo-async", "npm:2.6.2"],
             ["pkg-dir", "npm:4.2.0"],
-            ["schema-utils", "npm:2.7.0"],
-            ["tapable", "npm:2.0.0-beta.9"],
-            ["terser-webpack-plugin", "virtual:f9bb67dfd69024370ec3034670580f61299de48db54e56b7b7f6be955f4b2d12b5a289b8059d2552dd17249e4be8d65829a6642d3165c21478efdb56c7a064e2#npm:3.0.4"],
-            ["watchpack", "npm:2.0.0-beta.13"],
-            ["webpack-sources", "npm:2.0.0-beta.8"]
+            ["schema-utils", "npm:2.7.1"],
+            ["tapable", "npm:2.0.0-beta.11"],
+            ["terser-webpack-plugin", "virtual:334e20b3839479d7caded933eeb713ba43bdef5de274a5fdc9dade2c4821dd796e39a4c5094a3d5fe8b72ea8d18d4d2ee111623834be95425cbb1bb6193708ec#npm:4.2.0"],
+            ["watchpack", "npm:2.0.0-beta.15"],
+            ["webpack-cli", "virtual:16110bda3ce959c103b1979c5d750ceb8ac9cfbd2049c118b6278e46e65aa65fd17e71e04a0ce5f75b7ca3203efd8e9c9b03c948a76c7f4bca807539915b5cfc#npm:4.0.0-beta.8"],
+            ["webpack-sources", "npm:2.0.0-beta.10"]
+          ],
+          "packagePeers": [
+            "webpack-cli"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:4bb0e72ae00ec402a28e80560124ee13357b1a5221665b7175877ddc6b8b2b98eebe4584a111245801ecf7cecb9de577d076505c0dbcf9292aaff35440a2302f#npm:5.0.0-beta.30", {
+          "packageLocation": "./.yarn/$$virtual/webpack-virtual-9483b134ca/0/cache/webpack-npm-5.0.0-beta.30-fc780673ae-fc95c4cfe9.zip/node_modules/webpack/",
+          "packageDependencies": [
+            ["webpack", "virtual:4bb0e72ae00ec402a28e80560124ee13357b1a5221665b7175877ddc6b8b2b98eebe4584a111245801ecf7cecb9de577d076505c0dbcf9292aaff35440a2302f#npm:5.0.0-beta.30"],
+            ["@types/eslint-scope", "npm:3.7.0"],
+            ["@types/estree", "npm:0.0.45"],
+            ["@webassemblyjs/ast", "npm:1.9.0"],
+            ["@webassemblyjs/helper-module-context", "npm:1.9.0"],
+            ["@webassemblyjs/wasm-edit", "npm:1.9.0"],
+            ["@webassemblyjs/wasm-parser", "npm:1.9.0"],
+            ["acorn", "npm:7.4.0"],
+            ["chrome-trace-event", "npm:1.0.2"],
+            ["enhanced-resolve", "npm:5.0.0-beta.10"],
+            ["eslint-scope", "npm:5.1.0"],
+            ["events", "npm:3.2.0"],
+            ["glob-to-regexp", "npm:0.4.1"],
+            ["graceful-fs", "npm:4.2.4"],
+            ["json-parse-better-errors", "npm:1.0.2"],
+            ["loader-runner", "npm:4.0.0"],
+            ["mime-types", "npm:2.1.27"],
+            ["neo-async", "npm:2.6.2"],
+            ["pkg-dir", "npm:4.2.0"],
+            ["schema-utils", "npm:2.7.1"],
+            ["tapable", "npm:2.0.0-beta.11"],
+            ["terser-webpack-plugin", "virtual:9483b134cadfdfbc6ce4ef0862bfd07363d9e869471fc031d492f3354530d3e706236bbd8aff8f3f0ded0e0bac0e58a4154386bc7273f63fdcf8530313ad24da#npm:4.2.0"],
+            ["watchpack", "npm:2.0.0-beta.15"],
+            ["webpack-cli", "virtual:4bb0e72ae00ec402a28e80560124ee13357b1a5221665b7175877ddc6b8b2b98eebe4584a111245801ecf7cecb9de577d076505c0dbcf9292aaff35440a2302f#npm:4.0.0-beta.8"],
+            ["webpack-sources", "npm:2.0.0-beta.10"]
+          ],
+          "packagePeers": [
+            "webpack-cli"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:5.0.0-beta.30", {
+          "packageLocation": "./.yarn/$$virtual/webpack-virtual-fe42553600/0/cache/webpack-npm-5.0.0-beta.30-fc780673ae-fc95c4cfe9.zip/node_modules/webpack/",
+          "packageDependencies": [
+            ["webpack", "virtual:e04a2594c769771b96db34e7a92a8a3af1c98ae86dce662589a5c5d5209e16875506f8cb5f4c2230a2b2ae06335b14466352c4ed470d39edf9edb6c515984525#npm:5.0.0-beta.30"],
+            ["@types/eslint-scope", "npm:3.7.0"],
+            ["@types/estree", "npm:0.0.45"],
+            ["@webassemblyjs/ast", "npm:1.9.0"],
+            ["@webassemblyjs/helper-module-context", "npm:1.9.0"],
+            ["@webassemblyjs/wasm-edit", "npm:1.9.0"],
+            ["@webassemblyjs/wasm-parser", "npm:1.9.0"],
+            ["acorn", "npm:7.4.0"],
+            ["chrome-trace-event", "npm:1.0.2"],
+            ["enhanced-resolve", "npm:5.0.0-beta.10"],
+            ["eslint-scope", "npm:5.1.0"],
+            ["events", "npm:3.2.0"],
+            ["glob-to-regexp", "npm:0.4.1"],
+            ["graceful-fs", "npm:4.2.4"],
+            ["json-parse-better-errors", "npm:1.0.2"],
+            ["loader-runner", "npm:4.0.0"],
+            ["mime-types", "npm:2.1.27"],
+            ["neo-async", "npm:2.6.2"],
+            ["pkg-dir", "npm:4.2.0"],
+            ["schema-utils", "npm:2.7.1"],
+            ["tapable", "npm:2.0.0-beta.11"],
+            ["terser-webpack-plugin", "virtual:fe42553600eefb75e03656a3dc1c299442e3377486c03945b6ccf3ea9e525773b22474f2ac2ba9bbd837c94fb1c62450151590a17fdde311f0e49efe5eec2ca7#npm:4.2.0"],
+            ["watchpack", "npm:2.0.0-beta.15"],
+            ["webpack-cli", null],
+            ["webpack-sources", "npm:2.0.0-beta.10"]
+          ],
+          "packagePeers": [
+            "webpack-cli"
           ],
           "linkType": "HARD",
         }]
@@ -34670,7 +34947,35 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["interpret", "npm:2.2.0"],
             ["rechoir", "npm:0.7.0"],
             ["v8-compile-cache", "npm:2.1.1"],
-            ["webpack", "npm:5.0.0-beta.17"],
+            ["webpack", "virtual:16110bda3ce959c103b1979c5d750ceb8ac9cfbd2049c118b6278e46e65aa65fd17e71e04a0ce5f75b7ca3203efd8e9c9b03c948a76c7f4bca807539915b5cfc#npm:5.0.0-beta.30"],
+            ["webpack-log", "npm:3.0.1"],
+            ["webpack-merge", "npm:4.2.2"]
+          ],
+          "packagePeers": [
+            "@types/webpack",
+            "webpack"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:4bb0e72ae00ec402a28e80560124ee13357b1a5221665b7175877ddc6b8b2b98eebe4584a111245801ecf7cecb9de577d076505c0dbcf9292aaff35440a2302f#npm:4.0.0-beta.8", {
+          "packageLocation": "./.yarn/$$virtual/webpack-cli-virtual-9517d80781/0/cache/webpack-cli-npm-4.0.0-beta.8-639c7f60d2-f012b213b4.zip/node_modules/webpack-cli/",
+          "packageDependencies": [
+            ["webpack-cli", "virtual:4bb0e72ae00ec402a28e80560124ee13357b1a5221665b7175877ddc6b8b2b98eebe4584a111245801ecf7cecb9de577d076505c0dbcf9292aaff35440a2302f#npm:4.0.0-beta.8"],
+            ["@types/webpack", null],
+            ["@webpack-cli/logger", "virtual:9517d80781d149b305598e24e8735e83d62bd5ed66f0c3dfde86c1b8201215c89d5f6a65c8bce07acd7e2e14d2898c8703dd0150e6c92272a7f67003acfa0ba3#npm:1.0.1-alpha.4"],
+            ["@webpack-cli/package-utils", "npm:1.0.1-alpha.4"],
+            ["ansi-escapes", "npm:4.3.1"],
+            ["chalk", "npm:3.0.0"],
+            ["cli-table3", "npm:0.5.1"],
+            ["command-line-args", "npm:5.1.1"],
+            ["command-line-usage", "npm:6.1.0"],
+            ["enquirer", "npm:2.3.6"],
+            ["execa", "npm:3.4.0"],
+            ["import-local", "npm:3.0.2"],
+            ["interpret", "npm:2.2.0"],
+            ["rechoir", "npm:0.7.0"],
+            ["v8-compile-cache", "npm:2.1.1"],
+            ["webpack", "virtual:4bb0e72ae00ec402a28e80560124ee13357b1a5221665b7175877ddc6b8b2b98eebe4584a111245801ecf7cecb9de577d076505c0dbcf9292aaff35440a2302f#npm:5.0.0-beta.30"],
             ["webpack-log", "npm:3.0.1"],
             ["webpack-merge", "npm:4.2.2"]
           ],
@@ -34807,10 +35112,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:2.0.0-beta.8", {
-          "packageLocation": "./.yarn/cache/webpack-sources-npm-2.0.0-beta.8-78e9104851-acf94efb2e.zip/node_modules/webpack-sources/",
+        ["npm:2.0.0-beta.10", {
+          "packageLocation": "./.yarn/cache/webpack-sources-npm-2.0.0-beta.10-e57bdc4daa-ecfe1f3dc8.zip/node_modules/webpack-sources/",
           "packageDependencies": [
-            ["webpack-sources", "npm:2.0.0-beta.8"],
+            ["webpack-sources", "npm:2.0.0-beta.10"],
             ["source-list-map", "npm:2.0.1"],
             ["source-map", "npm:0.6.1"]
           ],
@@ -35826,29 +36131,111 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 398:
+/***/ 98:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "uY": () => /* binding */ FakeFS,
-  "fS": () => /* binding */ BasePortableFakeFS
+  "default": () => /* default */ _entryPoint
 });
-
-// UNUSED EXPORTS: normalizeLineEndings
-
-// EXTERNAL MODULE: external "os"
-var external_os_ = __webpack_require__(87);
 
 // EXTERNAL MODULE: external "fs"
 var external_fs_ = __webpack_require__(747);
 var external_fs_default = /*#__PURE__*/__webpack_require__.n(external_fs_);
 
-// EXTERNAL MODULE: ../yarnpkg-fslib/sources/path.ts
-var path = __webpack_require__(9);
+// EXTERNAL MODULE: external "os"
+var external_os_ = __webpack_require__(87);
+var external_os_default = /*#__PURE__*/__webpack_require__.n(external_os_);
 
+// EXTERNAL MODULE: external "path"
+var external_path_ = __webpack_require__(622);
+var external_path_default = /*#__PURE__*/__webpack_require__.n(external_path_);
+
+// CONCATENATED MODULE: ../yarnpkg-fslib/sources/path.ts
+
+var PathType;
+
+(function (PathType) {
+  PathType[PathType["File"] = 0] = "File";
+  PathType[PathType["Portable"] = 1] = "Portable";
+  PathType[PathType["Native"] = 2] = "Native";
+})(PathType || (PathType = {}));
+
+const PortablePath = {
+  root: `/`,
+  dot: `.`
+};
+const Filename = {
+  nodeModules: `node_modules`,
+  manifest: `package.json`,
+  lockfile: `yarn.lock`,
+  pnpJs: `.pnp.js`,
+  rc: `.yarnrc.yml`
+};
+const npath = Object.create((external_path_default()));
+const ppath = Object.create((external_path_default()).posix);
+
+npath.cwd = () => process.cwd();
+
+ppath.cwd = () => toPortablePath(process.cwd());
+
+ppath.resolve = (...segments) => {
+  if (segments.length > 0 && ppath.isAbsolute(segments[0])) {
+    return external_path_default().posix.resolve(...segments);
+  } else {
+    return external_path_default().posix.resolve(ppath.cwd(), ...segments);
+  }
+};
+
+const contains = function (pathUtils, from, to) {
+  from = pathUtils.normalize(from);
+  to = pathUtils.normalize(to);
+  if (from === to) return `.`;
+  if (!from.endsWith(pathUtils.sep)) from = from + pathUtils.sep;
+
+  if (to.startsWith(from)) {
+    return to.slice(from.length);
+  } else {
+    return null;
+  }
+};
+
+npath.fromPortablePath = fromPortablePath;
+npath.toPortablePath = toPortablePath;
+
+npath.contains = (from, to) => contains(npath, from, to);
+
+ppath.contains = (from, to) => contains(ppath, from, to);
+
+const WINDOWS_PATH_REGEXP = /^([a-zA-Z]:.*)$/;
+const UNC_WINDOWS_PATH_REGEXP = /^\\\\(\.\\)?(.*)$/;
+const PORTABLE_PATH_REGEXP = /^\/([a-zA-Z]:.*)$/;
+const UNC_PORTABLE_PATH_REGEXP = /^\/unc\/(\.dot\/)?(.*)$/; // Path should look like "/N:/berry/scripts/plugin-pack.js"
+// And transform to "N:\berry\scripts\plugin-pack.js"
+
+function fromPortablePath(p) {
+  if (process.platform !== `win32`) return p;
+  if (p.match(PORTABLE_PATH_REGEXP)) p = p.replace(PORTABLE_PATH_REGEXP, `$1`);else if (p.match(UNC_PORTABLE_PATH_REGEXP)) p = p.replace(UNC_PORTABLE_PATH_REGEXP, (match, p1, p2) => `\\\\${p1 ? `.\\` : ``}${p2}`);else return p;
+  return p.replace(/\//g, `\\`);
+} // Path should look like "N:/berry/scripts/plugin-pack.js"
+// And transform to "/N:/berry/scripts/plugin-pack.js"
+
+
+function toPortablePath(p) {
+  if (process.platform !== `win32`) return p;
+  if (p.match(WINDOWS_PATH_REGEXP)) p = p.replace(WINDOWS_PATH_REGEXP, `/$1`);else if (p.match(UNC_WINDOWS_PATH_REGEXP)) p = p.replace(UNC_WINDOWS_PATH_REGEXP, (match, p1, p2) => `/unc/${p1 ? `.dot/` : ``}${p2}`);
+  return p.replace(/\\/g, `/`);
+}
+
+function convertPath(targetPathUtils, sourcePath) {
+  return targetPathUtils === npath ? fromPortablePath(sourcePath) : toPortablePath(sourcePath);
+}
+function toFilename(filename) {
+  if (npath.parse(filename).dir !== `` || ppath.parse(filename).dir !== ``) throw new Error(`Invalid filename: "${filename}"`);
+  return filename;
+}
 // CONCATENATED MODULE: ../yarnpkg-fslib/sources/algorithms/copyPromise.ts
 
  // 1980-01-01, like Fedora
@@ -35970,7 +36357,7 @@ async function copySymlink(prelayout, postlayout, updateTime, destinationFs, des
   }
 
   const target = await sourceFs.readlinkPromise(source);
-  prelayout.push(async () => destinationFs.symlinkPromise((0,path/* convertPath */.CI)(destinationFs.pathUtils, target), destination));
+  prelayout.push(async () => destinationFs.symlinkPromise(convertPath(destinationFs.pathUtils, target), destination));
 }
 // CONCATENATED MODULE: ../yarnpkg-fslib/sources/FakeFS.ts
 
@@ -36180,7 +36567,7 @@ class FakeFS {
       if (!exists || overwrite) {
         if (exists) this.removeSync(destination);
         const target = baseFs.readlinkSync(source);
-        this.symlinkSync((0,path/* convertPath */.CI)(this.pathUtils, target), destination);
+        this.symlinkSync(convertPath(this.pathUtils, target), destination);
       }
     } else {
       throw new Error(`Unsupported file type (file: ${source}, mode: 0o${stat.mode.toString(8).padStart(6, `0`)})`);
@@ -36375,7 +36762,7 @@ class FakeFS {
 FakeFS.DEFAULT_TIME = 315532800;
 class BasePortableFakeFS extends FakeFS {
   constructor() {
-    super(path/* ppath */.y1);
+    super(ppath);
   }
 
 }
@@ -36391,124 +36778,6 @@ function getEndOfLine(content) {
 function normalizeLineEndings(originalContent, newContent) {
   return newContent.replace(/\r?\n/g, getEndOfLine(originalContent));
 }
-
-/***/ }),
-
-/***/ 9:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "LZ": () => /* binding */ PortablePath,
-/* harmony export */   "cS": () => /* binding */ npath,
-/* harmony export */   "y1": () => /* binding */ ppath,
-/* harmony export */   "CI": () => /* binding */ convertPath
-/* harmony export */ });
-/* unused harmony exports Filename, toFilename */
-/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(622);
-/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(path__WEBPACK_IMPORTED_MODULE_0__);
-
-var PathType;
-
-(function (PathType) {
-  PathType[PathType["File"] = 0] = "File";
-  PathType[PathType["Portable"] = 1] = "Portable";
-  PathType[PathType["Native"] = 2] = "Native";
-})(PathType || (PathType = {}));
-
-const PortablePath = {
-  root: `/`,
-  dot: `.`
-};
-const Filename = {
-  nodeModules: `node_modules`,
-  manifest: `package.json`,
-  lockfile: `yarn.lock`,
-  pnpJs: `.pnp.js`,
-  rc: `.yarnrc.yml`
-};
-const npath = Object.create((path__WEBPACK_IMPORTED_MODULE_0___default()));
-const ppath = Object.create((path__WEBPACK_IMPORTED_MODULE_0___default().posix));
-
-npath.cwd = () => process.cwd();
-
-ppath.cwd = () => toPortablePath(process.cwd());
-
-ppath.resolve = (...segments) => {
-  if (segments.length > 0 && ppath.isAbsolute(segments[0])) {
-    return path__WEBPACK_IMPORTED_MODULE_0___default().posix.resolve(...segments);
-  } else {
-    return path__WEBPACK_IMPORTED_MODULE_0___default().posix.resolve(ppath.cwd(), ...segments);
-  }
-};
-
-const contains = function (pathUtils, from, to) {
-  from = pathUtils.normalize(from);
-  to = pathUtils.normalize(to);
-  if (from === to) return `.`;
-  if (!from.endsWith(pathUtils.sep)) from = from + pathUtils.sep;
-
-  if (to.startsWith(from)) {
-    return to.slice(from.length);
-  } else {
-    return null;
-  }
-};
-
-npath.fromPortablePath = fromPortablePath;
-npath.toPortablePath = toPortablePath;
-
-npath.contains = (from, to) => contains(npath, from, to);
-
-ppath.contains = (from, to) => contains(ppath, from, to);
-
-const WINDOWS_PATH_REGEXP = /^([a-zA-Z]:.*)$/;
-const UNC_WINDOWS_PATH_REGEXP = /^\\\\(\.\\)?(.*)$/;
-const PORTABLE_PATH_REGEXP = /^\/([a-zA-Z]:.*)$/;
-const UNC_PORTABLE_PATH_REGEXP = /^\/unc\/(\.dot\/)?(.*)$/; // Path should look like "/N:/berry/scripts/plugin-pack.js"
-// And transform to "N:\berry\scripts\plugin-pack.js"
-
-function fromPortablePath(p) {
-  if (process.platform !== `win32`) return p;
-  if (p.match(PORTABLE_PATH_REGEXP)) p = p.replace(PORTABLE_PATH_REGEXP, `$1`);else if (p.match(UNC_PORTABLE_PATH_REGEXP)) p = p.replace(UNC_PORTABLE_PATH_REGEXP, (match, p1, p2) => `\\\\${p1 ? `.\\` : ``}${p2}`);else return p;
-  return p.replace(/\//g, `\\`);
-} // Path should look like "N:/berry/scripts/plugin-pack.js"
-// And transform to "/N:/berry/scripts/plugin-pack.js"
-
-
-function toPortablePath(p) {
-  if (process.platform !== `win32`) return p;
-  if (p.match(WINDOWS_PATH_REGEXP)) p = p.replace(WINDOWS_PATH_REGEXP, `/$1`);else if (p.match(UNC_WINDOWS_PATH_REGEXP)) p = p.replace(UNC_WINDOWS_PATH_REGEXP, (match, p1, p2) => `/unc/${p1 ? `.dot/` : ``}${p2}`);
-  return p.replace(/\\/g, `/`);
-}
-
-function convertPath(targetPathUtils, sourcePath) {
-  return targetPathUtils === npath ? fromPortablePath(sourcePath) : toPortablePath(sourcePath);
-}
-function toFilename(filename) {
-  if (npath.parse(filename).dir !== `` || ppath.parse(filename).dir !== ``) throw new Error(`Invalid filename: "${filename}"`);
-  return filename;
-}
-
-/***/ }),
-
-/***/ 170:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => /* default */ _entryPoint
-});
-
-// EXTERNAL MODULE: external "fs"
-var external_fs_ = __webpack_require__(747);
-var external_fs_default = /*#__PURE__*/__webpack_require__.n(external_fs_);
-
-// EXTERNAL MODULE: ../yarnpkg-fslib/sources/FakeFS.ts + 1 modules
-var FakeFS = __webpack_require__(398);
-
 // CONCATENATED MODULE: ../yarnpkg-fslib/sources/errors.ts
 function makeError(code, message) {
   return Object.assign(new Error(`${code}: ${message}`), {
@@ -36557,15 +36826,12 @@ class LibzipError extends Error {
   }
 
 }
-// EXTERNAL MODULE: ../yarnpkg-fslib/sources/path.ts
-var sources_path = __webpack_require__(9);
-
 // CONCATENATED MODULE: ../yarnpkg-fslib/sources/NodeFS.ts
 
 
 
 
-class NodeFS extends FakeFS/* BasePortableFakeFS */.fS {
+class NodeFS extends BasePortableFakeFS {
   constructor(realFs = (external_fs_default())) {
     super();
     this.realFs = realFs; // @ts-expect-error
@@ -36581,21 +36847,21 @@ class NodeFS extends FakeFS/* BasePortableFakeFS */.fS {
   }
 
   getRealPath() {
-    return sources_path/* PortablePath.root */.LZ.root;
+    return PortablePath.root;
   }
 
   resolve(p) {
-    return sources_path/* ppath.resolve */.y1.resolve(p);
+    return ppath.resolve(p);
   }
 
   async openPromise(p, flags, mode) {
     return await new Promise((resolve, reject) => {
-      this.realFs.open(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), flags, mode, this.makeCallback(resolve, reject));
+      this.realFs.open(npath.fromPortablePath(p), flags, mode, this.makeCallback(resolve, reject));
     });
   }
 
   openSync(p, flags, mode) {
-    return this.realFs.openSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), flags, mode);
+    return this.realFs.openSync(npath.fromPortablePath(p), flags, mode);
   }
 
   async readPromise(fd, buffer, offset = 0, length = 0, position = -1) {
@@ -36643,110 +36909,110 @@ class NodeFS extends FakeFS/* BasePortableFakeFS */.fS {
   }
 
   createReadStream(p, opts) {
-    const realPath = p !== null ? sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p) : p;
+    const realPath = p !== null ? npath.fromPortablePath(p) : p;
     return this.realFs.createReadStream(realPath, opts);
   }
 
   createWriteStream(p, opts) {
-    const realPath = p !== null ? sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p) : p;
+    const realPath = p !== null ? npath.fromPortablePath(p) : p;
     return this.realFs.createWriteStream(realPath, opts);
   }
 
   async realpathPromise(p) {
     return await new Promise((resolve, reject) => {
-      this.realFs.realpath(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), {}, this.makeCallback(resolve, reject));
+      this.realFs.realpath(npath.fromPortablePath(p), {}, this.makeCallback(resolve, reject));
     }).then(path => {
-      return sources_path/* npath.toPortablePath */.cS.toPortablePath(path);
+      return npath.toPortablePath(path);
     });
   }
 
   realpathSync(p) {
-    return sources_path/* npath.toPortablePath */.cS.toPortablePath(this.realFs.realpathSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), {}));
+    return npath.toPortablePath(this.realFs.realpathSync(npath.fromPortablePath(p), {}));
   }
 
   async existsPromise(p) {
     return await new Promise(resolve => {
-      this.realFs.exists(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), resolve);
+      this.realFs.exists(npath.fromPortablePath(p), resolve);
     });
   }
 
   accessSync(p, mode) {
-    return this.realFs.accessSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), mode);
+    return this.realFs.accessSync(npath.fromPortablePath(p), mode);
   }
 
   async accessPromise(p, mode) {
     return await new Promise((resolve, reject) => {
-      this.realFs.access(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), mode, this.makeCallback(resolve, reject));
+      this.realFs.access(npath.fromPortablePath(p), mode, this.makeCallback(resolve, reject));
     });
   }
 
   existsSync(p) {
-    return this.realFs.existsSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p));
+    return this.realFs.existsSync(npath.fromPortablePath(p));
   }
 
   async statPromise(p) {
     return await new Promise((resolve, reject) => {
-      this.realFs.stat(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), this.makeCallback(resolve, reject));
+      this.realFs.stat(npath.fromPortablePath(p), this.makeCallback(resolve, reject));
     });
   }
 
   statSync(p) {
-    return this.realFs.statSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p));
+    return this.realFs.statSync(npath.fromPortablePath(p));
   }
 
   async lstatPromise(p) {
     return await new Promise((resolve, reject) => {
-      this.realFs.lstat(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), this.makeCallback(resolve, reject));
+      this.realFs.lstat(npath.fromPortablePath(p), this.makeCallback(resolve, reject));
     });
   }
 
   lstatSync(p) {
-    return this.realFs.lstatSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p));
+    return this.realFs.lstatSync(npath.fromPortablePath(p));
   }
 
   async chmodPromise(p, mask) {
     return await new Promise((resolve, reject) => {
-      this.realFs.chmod(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), mask, this.makeCallback(resolve, reject));
+      this.realFs.chmod(npath.fromPortablePath(p), mask, this.makeCallback(resolve, reject));
     });
   }
 
   chmodSync(p, mask) {
-    return this.realFs.chmodSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), mask);
+    return this.realFs.chmodSync(npath.fromPortablePath(p), mask);
   }
 
   async chownPromise(p, uid, gid) {
     return await new Promise((resolve, reject) => {
-      this.realFs.chown(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), uid, gid, this.makeCallback(resolve, reject));
+      this.realFs.chown(npath.fromPortablePath(p), uid, gid, this.makeCallback(resolve, reject));
     });
   }
 
   chownSync(p, uid, gid) {
-    return this.realFs.chownSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), uid, gid);
+    return this.realFs.chownSync(npath.fromPortablePath(p), uid, gid);
   }
 
   async renamePromise(oldP, newP) {
     return await new Promise((resolve, reject) => {
-      this.realFs.rename(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(oldP), sources_path/* npath.fromPortablePath */.cS.fromPortablePath(newP), this.makeCallback(resolve, reject));
+      this.realFs.rename(npath.fromPortablePath(oldP), npath.fromPortablePath(newP), this.makeCallback(resolve, reject));
     });
   }
 
   renameSync(oldP, newP) {
-    return this.realFs.renameSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(oldP), sources_path/* npath.fromPortablePath */.cS.fromPortablePath(newP));
+    return this.realFs.renameSync(npath.fromPortablePath(oldP), npath.fromPortablePath(newP));
   }
 
   async copyFilePromise(sourceP, destP, flags = 0) {
     return await new Promise((resolve, reject) => {
-      this.realFs.copyFile(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(sourceP), sources_path/* npath.fromPortablePath */.cS.fromPortablePath(destP), flags, this.makeCallback(resolve, reject));
+      this.realFs.copyFile(npath.fromPortablePath(sourceP), npath.fromPortablePath(destP), flags, this.makeCallback(resolve, reject));
     });
   }
 
   copyFileSync(sourceP, destP, flags = 0) {
-    return this.realFs.copyFileSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(sourceP), sources_path/* npath.fromPortablePath */.cS.fromPortablePath(destP), flags);
+    return this.realFs.copyFileSync(npath.fromPortablePath(sourceP), npath.fromPortablePath(destP), flags);
   }
 
   async appendFilePromise(p, content, opts) {
     return await new Promise((resolve, reject) => {
-      const fsNativePath = typeof p === `string` ? sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p) : p;
+      const fsNativePath = typeof p === `string` ? npath.fromPortablePath(p) : p;
 
       if (opts) {
         this.realFs.appendFile(fsNativePath, content, opts, this.makeCallback(resolve, reject));
@@ -36757,7 +37023,7 @@ class NodeFS extends FakeFS/* BasePortableFakeFS */.fS {
   }
 
   appendFileSync(p, content, opts) {
-    const fsNativePath = typeof p === `string` ? sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p) : p;
+    const fsNativePath = typeof p === `string` ? npath.fromPortablePath(p) : p;
 
     if (opts) {
       this.realFs.appendFileSync(fsNativePath, content, opts);
@@ -36768,7 +37034,7 @@ class NodeFS extends FakeFS/* BasePortableFakeFS */.fS {
 
   async writeFilePromise(p, content, opts) {
     return await new Promise((resolve, reject) => {
-      const fsNativePath = typeof p === `string` ? sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p) : p;
+      const fsNativePath = typeof p === `string` ? npath.fromPortablePath(p) : p;
 
       if (opts) {
         this.realFs.writeFile(fsNativePath, content, opts, this.makeCallback(resolve, reject));
@@ -36779,7 +37045,7 @@ class NodeFS extends FakeFS/* BasePortableFakeFS */.fS {
   }
 
   writeFileSync(p, content, opts) {
-    const fsNativePath = typeof p === `string` ? sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p) : p;
+    const fsNativePath = typeof p === `string` ? npath.fromPortablePath(p) : p;
 
     if (opts) {
       this.realFs.writeFileSync(fsNativePath, content, opts);
@@ -36790,22 +37056,22 @@ class NodeFS extends FakeFS/* BasePortableFakeFS */.fS {
 
   async unlinkPromise(p) {
     return await new Promise((resolve, reject) => {
-      this.realFs.unlink(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), this.makeCallback(resolve, reject));
+      this.realFs.unlink(npath.fromPortablePath(p), this.makeCallback(resolve, reject));
     });
   }
 
   unlinkSync(p) {
-    return this.realFs.unlinkSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p));
+    return this.realFs.unlinkSync(npath.fromPortablePath(p));
   }
 
   async utimesPromise(p, atime, mtime) {
     return await new Promise((resolve, reject) => {
-      this.realFs.utimes(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), atime, mtime, this.makeCallback(resolve, reject));
+      this.realFs.utimes(npath.fromPortablePath(p), atime, mtime, this.makeCallback(resolve, reject));
     });
   }
 
   utimesSync(p, atime, mtime) {
-    this.realFs.utimesSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), atime, mtime);
+    this.realFs.utimesSync(npath.fromPortablePath(p), atime, mtime);
   }
 
   async lutimesPromiseImpl(p, atime, mtime) {
@@ -36813,7 +37079,7 @@ class NodeFS extends FakeFS/* BasePortableFakeFS */.fS {
     const lutimes = this.realFs.lutimes;
     if (typeof lutimes === `undefined`) throw ENOSYS(`unavailable Node binding`, `lutimes '${p}'`);
     return await new Promise((resolve, reject) => {
-      lutimes.call(this.realFs, sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), atime, mtime, this.makeCallback(resolve, reject));
+      lutimes.call(this.realFs, npath.fromPortablePath(p), atime, mtime, this.makeCallback(resolve, reject));
     });
   }
 
@@ -36821,60 +37087,60 @@ class NodeFS extends FakeFS/* BasePortableFakeFS */.fS {
     // @ts-expect-error: Not yet in DefinitelyTyped
     const lutimesSync = this.realFs.lutimesSync;
     if (typeof lutimesSync === `undefined`) throw ENOSYS(`unavailable Node binding`, `lutimes '${p}'`);
-    lutimesSync.call(this.realFs, sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), atime, mtime);
+    lutimesSync.call(this.realFs, npath.fromPortablePath(p), atime, mtime);
   }
 
   async mkdirPromise(p, opts) {
     return await new Promise((resolve, reject) => {
-      this.realFs.mkdir(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), opts, this.makeCallback(resolve, reject));
+      this.realFs.mkdir(npath.fromPortablePath(p), opts, this.makeCallback(resolve, reject));
     });
   }
 
   mkdirSync(p, opts) {
-    return this.realFs.mkdirSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), opts);
+    return this.realFs.mkdirSync(npath.fromPortablePath(p), opts);
   }
 
   async rmdirPromise(p) {
     return await new Promise((resolve, reject) => {
-      this.realFs.rmdir(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), this.makeCallback(resolve, reject));
+      this.realFs.rmdir(npath.fromPortablePath(p), this.makeCallback(resolve, reject));
     });
   }
 
   rmdirSync(p) {
-    return this.realFs.rmdirSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p));
+    return this.realFs.rmdirSync(npath.fromPortablePath(p));
   }
 
   async linkPromise(existingP, newP) {
     return await new Promise((resolve, reject) => {
-      this.realFs.link(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(existingP), sources_path/* npath.fromPortablePath */.cS.fromPortablePath(newP), this.makeCallback(resolve, reject));
+      this.realFs.link(npath.fromPortablePath(existingP), npath.fromPortablePath(newP), this.makeCallback(resolve, reject));
     });
   }
 
   linkSync(existingP, newP) {
-    return this.realFs.linkSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(existingP), sources_path/* npath.fromPortablePath */.cS.fromPortablePath(newP));
+    return this.realFs.linkSync(npath.fromPortablePath(existingP), npath.fromPortablePath(newP));
   }
 
   async symlinkPromise(target, p, type) {
     const symlinkType = type || (target.endsWith(`/`) ? `dir` : `file`);
     return await new Promise((resolve, reject) => {
-      this.realFs.symlink(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(target.replace(/\/+$/, ``)), sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), symlinkType, this.makeCallback(resolve, reject));
+      this.realFs.symlink(npath.fromPortablePath(target.replace(/\/+$/, ``)), npath.fromPortablePath(p), symlinkType, this.makeCallback(resolve, reject));
     });
   }
 
   symlinkSync(target, p, type) {
     const symlinkType = type || (target.endsWith(`/`) ? `dir` : `file`);
-    return this.realFs.symlinkSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(target.replace(/\/+$/, ``)), sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), symlinkType);
+    return this.realFs.symlinkSync(npath.fromPortablePath(target.replace(/\/+$/, ``)), npath.fromPortablePath(p), symlinkType);
   }
 
   async readFilePromise(p, encoding) {
     return await new Promise((resolve, reject) => {
-      const fsNativePath = typeof p === `string` ? sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p) : p;
+      const fsNativePath = typeof p === `string` ? npath.fromPortablePath(p) : p;
       this.realFs.readFile(fsNativePath, encoding, this.makeCallback(resolve, reject));
     });
   }
 
   readFileSync(p, encoding) {
-    const fsNativePath = typeof p === `string` ? sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p) : p;
+    const fsNativePath = typeof p === `string` ? npath.fromPortablePath(p) : p;
     return this.realFs.readFileSync(fsNativePath, encoding);
   }
 
@@ -36883,11 +37149,11 @@ class NodeFS extends FakeFS/* BasePortableFakeFS */.fS {
   } = {}) {
     return await new Promise((resolve, reject) => {
       if (withFileTypes) {
-        this.realFs.readdir(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), {
+        this.realFs.readdir(npath.fromPortablePath(p), {
           withFileTypes: true
         }, this.makeCallback(resolve, reject));
       } else {
-        this.realFs.readdir(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), this.makeCallback(value => resolve(value), reject));
+        this.realFs.readdir(npath.fromPortablePath(p), this.makeCallback(value => resolve(value), reject));
       }
     });
   }
@@ -36896,48 +37162,48 @@ class NodeFS extends FakeFS/* BasePortableFakeFS */.fS {
     withFileTypes
   } = {}) {
     if (withFileTypes) {
-      return this.realFs.readdirSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), {
+      return this.realFs.readdirSync(npath.fromPortablePath(p), {
         withFileTypes: true
       });
     } else {
-      return this.realFs.readdirSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p));
+      return this.realFs.readdirSync(npath.fromPortablePath(p));
     }
   }
 
   async readlinkPromise(p) {
     return await new Promise((resolve, reject) => {
-      this.realFs.readlink(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), this.makeCallback(resolve, reject));
+      this.realFs.readlink(npath.fromPortablePath(p), this.makeCallback(resolve, reject));
     }).then(path => {
-      return sources_path/* npath.toPortablePath */.cS.toPortablePath(path);
+      return npath.toPortablePath(path);
     });
   }
 
   readlinkSync(p) {
-    return sources_path/* npath.toPortablePath */.cS.toPortablePath(this.realFs.readlinkSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p)));
+    return npath.toPortablePath(this.realFs.readlinkSync(npath.fromPortablePath(p)));
   }
 
   async truncatePromise(p, len) {
     return await new Promise((resolve, reject) => {
-      this.realFs.truncate(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), len, this.makeCallback(resolve, reject));
+      this.realFs.truncate(npath.fromPortablePath(p), len, this.makeCallback(resolve, reject));
     });
   }
 
   truncateSync(p, len) {
-    return this.realFs.truncateSync(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), len);
+    return this.realFs.truncateSync(npath.fromPortablePath(p), len);
   }
 
   watch(p, a, b) {
-    return this.realFs.watch(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), // @ts-expect-error
+    return this.realFs.watch(npath.fromPortablePath(p), // @ts-expect-error
     a, b);
   }
 
   watchFile(p, a, b) {
-    return this.realFs.watchFile(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), // @ts-expect-error
+    return this.realFs.watchFile(npath.fromPortablePath(p), // @ts-expect-error
     a, b);
   }
 
   unwatchFile(p, cb) {
-    return this.realFs.unwatchFile(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p), cb);
+    return this.realFs.unwatchFile(npath.fromPortablePath(p), cb);
   }
 
   makeCallback(resolve, reject) {
@@ -36953,7 +37219,7 @@ class NodeFS extends FakeFS/* BasePortableFakeFS */.fS {
 }
 // CONCATENATED MODULE: ../yarnpkg-fslib/sources/ProxiedFS.ts
 
-class ProxiedFS extends FakeFS/* FakeFS */.uY {
+class ProxiedFS extends FakeFS {
   getExtractHint(hints) {
     return this.baseFs.getExtractHint(hints);
   }
@@ -37240,15 +37506,15 @@ class VirtualFS extends ProxiedFS {
   constructor({
     baseFs = new NodeFS()
   } = {}) {
-    super(sources_path/* ppath */.y1);
+    super(ppath);
     this.baseFs = baseFs;
   }
 
   static makeVirtualPath(base, component, to) {
-    if (sources_path/* ppath.basename */.y1.basename(base) !== `$$virtual`) throw new Error(`Assertion failed: Virtual folders must be named "$$virtual"`);
-    if (!sources_path/* ppath.basename */.y1.basename(component).match(VALID_COMPONENT)) throw new Error(`Assertion failed: Virtual components must be ended by an hexadecimal hash`); // Obtains the relative distance between the virtual path and its actual target
+    if (ppath.basename(base) !== `$$virtual`) throw new Error(`Assertion failed: Virtual folders must be named "$$virtual"`);
+    if (!ppath.basename(component).match(VALID_COMPONENT)) throw new Error(`Assertion failed: Virtual components must be ended by an hexadecimal hash`); // Obtains the relative distance between the virtual path and its actual target
 
-    const target = sources_path/* ppath.relative */.y1.relative(sources_path/* ppath.dirname */.y1.dirname(base), to);
+    const target = ppath.relative(ppath.dirname(base), to);
     const segments = target.split(`/`); // Counts how many levels we need to go back to start applying the rest of the path
 
     let depth = 0;
@@ -37256,21 +37522,21 @@ class VirtualFS extends ProxiedFS {
     while (depth < segments.length && segments[depth] === `..`) depth += 1;
 
     const finalSegments = segments.slice(depth);
-    const fullVirtualPath = sources_path/* ppath.join */.y1.join(base, component, String(depth), ...finalSegments);
+    const fullVirtualPath = ppath.join(base, component, String(depth), ...finalSegments);
     return fullVirtualPath;
   }
 
   static resolveVirtual(p) {
     const match = p.match(VIRTUAL_REGEXP);
     if (!match || !match[3] && match[5]) return p;
-    const target = sources_path/* ppath.dirname */.y1.dirname(match[1]);
+    const target = ppath.dirname(match[1]);
     if (!match[3] || !match[4]) return target;
     const isnum = NUMBER_REGEXP.test(match[4]);
     if (!isnum) return p;
     const depth = Number(match[4]);
     const backstep = `../`.repeat(depth);
     const subpath = match[5] || `.`;
-    return VirtualFS.resolveVirtual(sources_path/* ppath.join */.y1.join(target, backstep, subpath));
+    return VirtualFS.resolveVirtual(ppath.join(target, backstep, subpath));
   }
 
   getExtractHint(hints) {
@@ -37702,7 +37968,7 @@ function toUnixTimestamp(time) {
   throw new Error(`Invalid time`);
 }
 
-class ZipFS extends FakeFS/* BasePortableFakeFS */.fS {
+class ZipFS extends BasePortableFakeFS {
   constructor(source, opts) {
     super();
     this.lzSource = null;
@@ -37768,7 +38034,7 @@ class ZipFS extends FakeFS/* BasePortableFakeFS */.fS {
       }
 
       if (typeof source === `string`) {
-        this.zip = this.libzip.open(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(source), flags, errPtr);
+        this.zip = this.libzip.open(npath.fromPortablePath(source), flags, errPtr);
       } else {
         const lzSource = this.allocateUnattachedSource(source);
 
@@ -37790,13 +38056,13 @@ class ZipFS extends FakeFS/* BasePortableFakeFS */.fS {
       this.libzip.free(errPtr);
     }
 
-    this.listings.set(sources_path/* PortablePath.root */.LZ.root, new Set());
+    this.listings.set(PortablePath.root, new Set());
     const entryCount = this.libzip.getNumEntries(this.zip, 0);
 
     for (let t = 0; t < entryCount; ++t) {
       const raw = this.libzip.getName(this.zip, t, 0);
-      if (sources_path/* ppath.isAbsolute */.y1.isAbsolute(raw)) continue;
-      const p = sources_path/* ppath.resolve */.y1.resolve(sources_path/* PortablePath.root */.LZ.root, raw);
+      if (ppath.isAbsolute(raw)) continue;
+      const p = ppath.resolve(PortablePath.root, raw);
       this.registerEntry(p, t); // If the raw path is a directory, register it
       // to prevent empty folder being skipped
 
@@ -37909,7 +38175,7 @@ class ZipFS extends FakeFS/* BasePortableFakeFS */.fS {
   }
 
   resolve(p) {
-    return sources_path/* ppath.resolve */.y1.resolve(sources_path/* PortablePath.root */.LZ.root, p);
+    return ppath.resolve(PortablePath.root, p);
   }
 
   async openPromise(p, flags, mode) {
@@ -38071,7 +38337,7 @@ class ZipFS extends FakeFS/* BasePortableFakeFS */.fS {
     if (!this.ready) throw EBUSY(`archive closed, existsSync '${p}'`);
 
     if (this.symlinkCount === 0) {
-      const resolvedP = sources_path/* ppath.resolve */.y1.resolve(sources_path/* PortablePath.root */.LZ.root, p);
+      const resolvedP = ppath.resolve(PortablePath.root, p);
       return this.entries.has(resolvedP) || this.listings.has(resolvedP);
     }
 
@@ -38210,23 +38476,23 @@ class ZipFS extends FakeFS/* BasePortableFakeFS */.fS {
   registerListing(p) {
     let listing = this.listings.get(p);
     if (listing) return listing;
-    const parentListing = this.registerListing(sources_path/* ppath.dirname */.y1.dirname(p));
+    const parentListing = this.registerListing(ppath.dirname(p));
     listing = new Set();
-    parentListing.add(sources_path/* ppath.basename */.y1.basename(p));
+    parentListing.add(ppath.basename(p));
     this.listings.set(p, listing);
     return listing;
   }
 
   registerEntry(p, index) {
-    const parentListing = this.registerListing(sources_path/* ppath.dirname */.y1.dirname(p));
-    parentListing.add(sources_path/* ppath.basename */.y1.basename(p));
+    const parentListing = this.registerListing(ppath.dirname(p));
+    parentListing.add(ppath.basename(p));
     this.entries.set(p, index);
   }
 
   unregisterListing(p) {
     this.listings.delete(p);
-    const parentListing = this.listings.get(sources_path/* ppath.dirname */.y1.dirname(p));
-    parentListing === null || parentListing === void 0 ? void 0 : parentListing.delete(sources_path/* ppath.basename */.y1.basename(p));
+    const parentListing = this.listings.get(ppath.dirname(p));
+    parentListing === null || parentListing === void 0 ? void 0 : parentListing.delete(ppath.basename(p));
   }
 
   unregisterEntry(p) {
@@ -38252,33 +38518,33 @@ class ZipFS extends FakeFS/* BasePortableFakeFS */.fS {
 
   resolveFilename(reason, p, resolveLastComponent = true) {
     if (!this.ready) throw EBUSY(`archive closed, ${reason}`);
-    let resolvedP = sources_path/* ppath.resolve */.y1.resolve(sources_path/* PortablePath.root */.LZ.root, p);
-    if (resolvedP === `/`) return sources_path/* PortablePath.root */.LZ.root;
+    let resolvedP = ppath.resolve(PortablePath.root, p);
+    if (resolvedP === `/`) return PortablePath.root;
     const fileIndex = this.entries.get(resolvedP);
 
     if (resolveLastComponent && fileIndex !== undefined) {
       if (this.symlinkCount !== 0 && this.isSymbolicLink(fileIndex)) {
         const target = this.getFileSource(fileIndex).toString();
-        return this.resolveFilename(reason, sources_path/* ppath.resolve */.y1.resolve(sources_path/* ppath.dirname */.y1.dirname(resolvedP), target), true);
+        return this.resolveFilename(reason, ppath.resolve(ppath.dirname(resolvedP), target), true);
       } else {
         return resolvedP;
       }
     }
 
     while (true) {
-      const parentP = this.resolveFilename(reason, sources_path/* ppath.dirname */.y1.dirname(resolvedP), true);
+      const parentP = this.resolveFilename(reason, ppath.dirname(resolvedP), true);
       const isDir = this.listings.has(parentP);
       const doesExist = this.entries.has(parentP);
       if (!isDir && !doesExist) throw ENOENT(reason);
       if (!isDir) throw ENOTDIR(reason);
-      resolvedP = sources_path/* ppath.resolve */.y1.resolve(parentP, sources_path/* ppath.basename */.y1.basename(resolvedP));
+      resolvedP = ppath.resolve(parentP, ppath.basename(resolvedP));
       if (!resolveLastComponent || this.symlinkCount === 0) break;
       const index = this.libzip.name.locate(this.zip, resolvedP.slice(1));
       if (index === -1) break;
 
       if (this.isSymbolicLink(index)) {
         const target = this.getFileSource(index).toString();
-        resolvedP = sources_path/* ppath.resolve */.y1.resolve(sources_path/* ppath.dirname */.y1.dirname(resolvedP), target);
+        resolvedP = ppath.resolve(ppath.dirname(resolvedP), target);
       } else {
         break;
       }
@@ -38333,7 +38599,7 @@ class ZipFS extends FakeFS/* BasePortableFakeFS */.fS {
 
   setFileSource(p, content) {
     const buffer = Buffer.isBuffer(content) ? content : Buffer.from(content);
-    const target = sources_path/* ppath.relative */.y1.relative(sources_path/* PortablePath.root */.LZ.root, p);
+    const target = ppath.relative(PortablePath.root, p);
     const lzSource = this.allocateSource(content);
 
     try {
@@ -38657,7 +38923,7 @@ class ZipFS extends FakeFS/* BasePortableFakeFS */.fS {
   }
 
   hydrateDirectory(resolvedP) {
-    const index = this.libzip.dir.add(this.zip, sources_path/* ppath.relative */.y1.relative(sources_path/* PortablePath.root */.LZ.root, resolvedP));
+    const index = this.libzip.dir.add(this.zip, ppath.relative(PortablePath.root, resolvedP));
     if (index === -1) throw this.makeLibzipError(this.libzip.getError(this.zip));
     this.registerListing(resolvedP);
     this.registerEntry(resolvedP, index);
@@ -38740,7 +39006,7 @@ class ZipFS extends FakeFS/* BasePortableFakeFS */.fS {
     const entries = [...directoryListing];
     if (!withFileTypes) return entries;
     return entries.map(name => {
-      return Object.assign(this.statImpl(`lstat`, sources_path/* ppath.join */.y1.join(p, name)), {
+      return Object.assign(this.statImpl(`lstat`, ppath.join(p, name)), {
         name
       });
     });
@@ -38846,7 +39112,7 @@ class ZipFS extends FakeFS/* BasePortableFakeFS */.fS {
 
 const ZIP_FD = 0x80000000;
 const FILE_PARTS_REGEX = /.*?(?<!\/)\.zip(?=\/|$)/;
-class ZipOpenFS extends FakeFS/* BasePortableFakeFS */.fS {
+class ZipOpenFS extends BasePortableFakeFS {
   constructor({
     libzip,
     baseFs = new NodeFS(),
@@ -39068,7 +39334,7 @@ class ZipOpenFS extends FakeFS/* BasePortableFakeFS */.fS {
         this.realPaths.set(archivePath, realArchivePath);
       }
 
-      return this.pathUtils.join(realArchivePath, this.pathUtils.relative(sources_path/* PortablePath.root */.LZ.root, await zipFs.realpathPromise(subPath)));
+      return this.pathUtils.join(realArchivePath, this.pathUtils.relative(PortablePath.root, await zipFs.realpathPromise(subPath)));
     });
   }
 
@@ -39086,7 +39352,7 @@ class ZipOpenFS extends FakeFS/* BasePortableFakeFS */.fS {
         this.realPaths.set(archivePath, realArchivePath);
       }
 
-      return this.pathUtils.join(realArchivePath, this.pathUtils.relative(sources_path/* PortablePath.root */.LZ.root, zipFs.realpathSync(subPath)));
+      return this.pathUtils.join(realArchivePath, this.pathUtils.relative(PortablePath.root, zipFs.realpathSync(subPath)));
     });
   }
 
@@ -39709,7 +39975,7 @@ class ZipOpenFS extends FakeFS/* BasePortableFakeFS */.fS {
 
       return {
         archivePath: filePath,
-        subPath: this.pathUtils.join(sources_path/* PortablePath.root */.LZ.root, p.substr(filePath.length))
+        subPath: this.pathUtils.join(PortablePath.root, p.substr(filePath.length))
       };
     }
   }
@@ -40004,13 +40270,12 @@ async function getLibzipPromise() {
 var external_module_ = __webpack_require__(282);
 var external_module_default = /*#__PURE__*/__webpack_require__.n(external_module_);
 
+// EXTERNAL MODULE: external "url"
+var external_url_ = __webpack_require__(835);
+
 // EXTERNAL MODULE: external "string_decoder"
 var external_string_decoder_ = __webpack_require__(304);
 var external_string_decoder_default = /*#__PURE__*/__webpack_require__.n(external_string_decoder_);
-
-// EXTERNAL MODULE: external "os"
-var external_os_ = __webpack_require__(87);
-var external_os_default = /*#__PURE__*/__webpack_require__.n(external_os_);
 
 // CONCATENATED MODULE: ../yarnpkg-fslib/sources/index.ts
 
@@ -40037,9 +40302,9 @@ var external_os_default = /*#__PURE__*/__webpack_require__.n(external_os_);
 
 
 function getTempName(prefix) {
-  const tmpdir = sources_path/* npath.toPortablePath */.cS.toPortablePath(external_os_default().tmpdir());
+  const tmpdir = npath.toPortablePath(external_os_default().tmpdir());
   const hash = Math.ceil(Math.random() * 0x100000000).toString(16).padStart(8, `0`);
-  return sources_path/* ppath.join */.y1.join(tmpdir, `${prefix}${hash}`);
+  return ppath.join(tmpdir, `${prefix}${hash}`);
 }
 
 function patchFs(patchedFs, fakeFs) {
@@ -40305,22 +40570,19 @@ const xfs = Object.assign(new NodeFS(), {
 
 class PosixFS extends ProxiedFS {
   constructor(baseFs) {
-    super(sources_path/* npath */.cS);
+    super(npath);
     this.baseFs = baseFs;
   }
 
   mapFromBase(path) {
-    return sources_path/* npath.fromPortablePath */.cS.fromPortablePath(path);
+    return npath.fromPortablePath(path);
   }
 
   mapToBase(path) {
-    return sources_path/* npath.toPortablePath */.cS.toPortablePath(path);
+    return npath.toPortablePath(path);
   }
 
 }
-// EXTERNAL MODULE: external "url"
-var external_url_ = __webpack_require__(835);
-
 // CONCATENATED MODULE: ./sources/loader/internalTools.ts
 
 var ErrorCode;
@@ -40377,7 +40639,7 @@ function getIssuerModule(parent) {
   return issuer || null;
 }
 function getPathForDisplay(p) {
-  return sources_path/* npath.normalize */.cS.normalize(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(p));
+  return npath.normalize(npath.fromPortablePath(p));
 }
 // CONCATENATED MODULE: ./sources/loader/applyPatch.ts
 
@@ -40456,7 +40718,7 @@ function applyPatch(pnpapi, opts) {
 
 
     const isOwnedByRuntime = parentApi !== null ? parentApi.findPackageLocator(modulePath) !== null : false;
-    const moduleApiPath = isOwnedByRuntime ? parentApiPath : opts.manager.findApiPathFor(sources_path/* npath.dirname */.cS.dirname(modulePath));
+    const moduleApiPath = isOwnedByRuntime ? parentApiPath : opts.manager.findApiPathFor(npath.dirname(modulePath));
     const entry = moduleApiPath !== null ? opts.manager.getApiEntry(moduleApiPath) : {
       instance: null,
       cache: defaultCache
@@ -40502,7 +40764,7 @@ function applyPatch(pnpapi, opts) {
 
   function getIssuerSpecsFromModule(module) {
     const issuer = getIssuerModule(module);
-    const issuerPath = issuer !== null ? sources_path/* npath.dirname */.cS.dirname(issuer.filename) : process.cwd();
+    const issuerPath = issuer !== null ? npath.dirname(issuer.filename) : process.cwd();
     return [{
       apiPath: opts.manager.getApiPathFromParent(issuer),
       path: issuerPath,
@@ -40512,7 +40774,7 @@ function applyPatch(pnpapi, opts) {
 
   function makeFakeParent(path) {
     const fakeParent = new external_module_.Module(``);
-    const fakeFilePath = sources_path/* npath.join */.cS.join(path, `[file]`);
+    const fakeFilePath = npath.join(path, `[file]`);
     fakeParent.paths = external_module_.Module._nodeModulePaths(fakeFilePath);
     return fakeParent;
   } // Splits a require request into its components, or return null if the request is a file path
@@ -40557,11 +40819,11 @@ function applyPatch(pnpapi, opts) {
     const issuerSpecs = options && options.paths ? getIssuerSpecsFromPaths(options.paths) : getIssuerSpecsFromModule(parent);
 
     if (request.match(pathRegExp) === null) {
-      const parentDirectory = (parent === null || parent === void 0 ? void 0 : parent.filename) != null ? sources_path/* npath.dirname */.cS.dirname(parent.filename) : null;
-      const absoluteRequest = sources_path/* npath.isAbsolute */.cS.isAbsolute(request) ? request : parentDirectory !== null ? sources_path/* npath.resolve */.cS.resolve(parentDirectory, request) : null;
+      const parentDirectory = (parent === null || parent === void 0 ? void 0 : parent.filename) != null ? npath.dirname(parent.filename) : null;
+      const absoluteRequest = npath.isAbsolute(request) ? request : parentDirectory !== null ? npath.resolve(parentDirectory, request) : null;
 
       if (absoluteRequest !== null) {
-        const apiPath = parentDirectory === sources_path/* npath.dirname */.cS.dirname(absoluteRequest) && (parent === null || parent === void 0 ? void 0 : parent.pnpApiPath) ? parent.pnpApiPath : opts.manager.findApiPathFor(absoluteRequest);
+        const apiPath = parentDirectory === npath.dirname(absoluteRequest) && (parent === null || parent === void 0 ? void 0 : parent.pnpApiPath) ? parent.pnpApiPath : opts.manager.findApiPathFor(absoluteRequest);
 
         if (apiPath !== null) {
           issuerSpecs.unshift({
@@ -40648,8 +40910,8 @@ function applyPatch(pnpapi, opts) {
 function hydrateRuntimeState(data, {
   basePath
 }) {
-  const portablePath = sources_path/* npath.toPortablePath */.cS.toPortablePath(basePath);
-  const absolutePortablePath = sources_path/* ppath.resolve */.y1.resolve(portablePath);
+  const portablePath = npath.toPortablePath(basePath);
+  const absolutePortablePath = ppath.resolve(portablePath);
   const ignorePattern = data.ignorePatternData !== null ? new RegExp(data.ignorePatternData) : null;
   const packageRegistry = new Map(data.packageRegistryData.map(([packageName, packageStoreData]) => {
     return [packageName, new Map(packageStoreData.map(([packageReference, packageInformationData]) => {
@@ -40657,7 +40919,7 @@ function hydrateRuntimeState(data, {
         // We use ppath.join instead of ppath.resolve because:
         // 1) packageInformationData.packageLocation is a relative path when part of the SerializedState
         // 2) ppath.join preserves trailing slashes
-        packageLocation: sources_path/* ppath.join */.y1.join(absolutePortablePath, packageInformationData.packageLocation),
+        packageLocation: ppath.join(absolutePortablePath, packageInformationData.packageLocation),
         packageDependencies: new Map(packageInformationData.packageDependencies),
         packagePeers: new Set(packageInformationData.packagePeers),
         linkType: packageInformationData.linkType,
@@ -40863,11 +41125,11 @@ function makeApi(runtimeState, opts) {
       let pkgJson;
 
       try {
-        pkgJson = JSON.parse(opts.fakeFs.readFileSync(sources_path/* ppath.join */.y1.join(unqualifiedPath, `package.json`), `utf8`));
+        pkgJson = JSON.parse(opts.fakeFs.readFileSync(ppath.join(unqualifiedPath, `package.json`), `utf8`));
       } catch (error) {}
 
       let nextUnqualifiedPath;
-      if (pkgJson && pkgJson.main) nextUnqualifiedPath = sources_path/* ppath.resolve */.y1.resolve(unqualifiedPath, pkgJson.main); // If the "main" field changed the path, we start again from this new location
+      if (pkgJson && pkgJson.main) nextUnqualifiedPath = ppath.resolve(unqualifiedPath, pkgJson.main); // If the "main" field changed the path, we start again from this new location
 
       if (nextUnqualifiedPath && nextUnqualifiedPath !== unqualifiedPath) {
         const resolution = applyNodeExtensionResolution(nextUnqualifiedPath, candidates, {
@@ -40893,7 +41155,7 @@ function makeApi(runtimeState, opts) {
 
     if (stat && stat.isDirectory()) {
       for (let i = 0, length = extensions.length; i < length; i++) {
-        const candidateFile = sources_path/* ppath.format */.y1.format({
+        const candidateFile = ppath.format({
           dir: unqualifiedPath,
           name: `index`,
           ext: extensions[i]
@@ -40932,7 +41194,7 @@ function makeApi(runtimeState, opts) {
 
 
   function normalizePath(p) {
-    return sources_path/* npath.toPortablePath */.cS.toPortablePath(p);
+    return npath.toPortablePath(p);
   }
   /**
    * Forward the resolution to the next resolver (usually the native one)
@@ -40940,12 +41202,12 @@ function makeApi(runtimeState, opts) {
 
 
   function callNativeResolution(request, issuer) {
-    if (issuer.endsWith(`/`)) issuer = sources_path/* ppath.join */.y1.join(issuer, `internal.js`); // Since we would need to create a fake module anyway (to call _resolveLookupPath that
+    if (issuer.endsWith(`/`)) issuer = ppath.join(issuer, `internal.js`); // Since we would need to create a fake module anyway (to call _resolveLookupPath that
     // would give us the paths to give to _resolveFilename), we can as well not use
     // the {paths} option at all, since it internally makes _resolveFilename create another
     // fake module anyway.
 
-    return external_module_.Module._resolveFilename(request, makeFakeModule(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(issuer)), false, {
+    return external_module_.Module._resolveFilename(request, makeFakeModule(npath.fromPortablePath(issuer)), false, {
       plugnplay: false
     });
   }
@@ -40956,7 +41218,7 @@ function makeApi(runtimeState, opts) {
 
   function isPathIgnored(path) {
     if (ignorePattern === null) return false;
-    const subPath = sources_path/* ppath.contains */.y1.contains(runtimeState.basePath, path);
+    const subPath = ppath.contains(runtimeState.basePath, path);
     if (subPath === null) return false;
 
     if (ignorePattern.test(subPath.replace(/\/$/, ``))) {
@@ -41079,7 +41341,7 @@ function makeApi(runtimeState, opts) {
 
 
   function findPackageLocator(location) {
-    let relativeLocation = normalizePath(sources_path/* ppath.relative */.y1.relative(runtimeState.basePath, location));
+    let relativeLocation = normalizePath(ppath.relative(runtimeState.basePath, location));
     if (!relativeLocation.match(isStrictRegExp)) relativeLocation = `./${relativeLocation}`;
     if (location.match(isDirRegExp) && !relativeLocation.endsWith(`/`)) relativeLocation = `${relativeLocation}/`;
     let from = 0; // If someone wants to use a binary search to go from O(n) to O(log n), be my guest
@@ -41133,7 +41395,7 @@ function makeApi(runtimeState, opts) {
     considerBuiltins = true
   } = {}) {
     // The 'pnpapi' request is reserved and will always return the path to the PnP file, from everywhere
-    if (request === `pnpapi`) return sources_path/* npath.toPortablePath */.cS.toPortablePath(opts.pnpapiResolution); // Bailout if the request is a native module
+    if (request === `pnpapi`) return npath.toPortablePath(opts.pnpapiResolution); // Bailout if the request is a native module
 
     if (considerBuiltins && builtinModules.has(request)) return null;
     const requestForDisplay = getPathForDisplay(request);
@@ -41149,7 +41411,7 @@ function makeApi(runtimeState, opts) {
       // because the native Node resolution uses a special version
       // of the `stat` syscall which would otherwise bypass the
       // filesystem layer we require to access the files.
-      if (!sources_path/* ppath.isAbsolute */.y1.isAbsolute(request) || findPackageLocator(request) === null) {
+      if (!ppath.isAbsolute(request) || findPackageLocator(request) === null) {
         const result = callNativeResolution(request, issuer);
 
         if (result === false) {
@@ -41159,7 +41421,7 @@ function makeApi(runtimeState, opts) {
           });
         }
 
-        return sources_path/* npath.toPortablePath */.cS.toPortablePath(result);
+        return npath.toPortablePath(result);
       }
     }
 
@@ -41168,8 +41430,8 @@ function makeApi(runtimeState, opts) {
     const dependencyNameMatch = request.match(pathRegExp);
 
     if (!dependencyNameMatch) {
-      if (sources_path/* ppath.isAbsolute */.y1.isAbsolute(request)) {
-        unqualifiedPath = sources_path/* ppath.normalize */.y1.normalize(request);
+      if (ppath.isAbsolute(request)) {
+        unqualifiedPath = ppath.normalize(request);
       } else {
         if (!issuer) {
           throw internalTools_makeError(ErrorCode.API_ERROR, `The resolveToUnqualified function must be called with a valid issuer when the path isn't a builtin nor absolute`, {
@@ -41181,12 +41443,12 @@ function makeApi(runtimeState, opts) {
         // 2) ppath.join preserves trailing slashes
 
 
-        const absoluteIssuer = sources_path/* ppath.resolve */.y1.resolve(issuer);
+        const absoluteIssuer = ppath.resolve(issuer);
 
         if (issuer.match(isDirRegExp)) {
-          unqualifiedPath = sources_path/* ppath.normalize */.y1.normalize(sources_path/* ppath.join */.y1.join(absoluteIssuer, request));
+          unqualifiedPath = ppath.normalize(ppath.join(absoluteIssuer, request));
         } else {
-          unqualifiedPath = sources_path/* ppath.normalize */.y1.normalize(sources_path/* ppath.join */.y1.join(sources_path/* ppath.dirname */.y1.dirname(absoluteIssuer), request));
+          unqualifiedPath = ppath.normalize(ppath.join(ppath.dirname(absoluteIssuer), request));
         }
       } // No need to use the return value; we just want to check the blacklist status
 
@@ -41216,7 +41478,7 @@ function makeApi(runtimeState, opts) {
             });
           }
 
-          return sources_path/* npath.toPortablePath */.cS.toPortablePath(result);
+          return npath.toPortablePath(result);
         }
 
         const issuerInformation = getPackageInformationSafe(issuerLocator); // We obtain the dependency reference in regard to the package that request it
@@ -41358,13 +41620,13 @@ function makeApi(runtimeState, opts) {
           // We use ppath.join instead of ppath.resolve because:
           // 1) subPath is always a relative path
           // 2) ppath.join preserves trailing slashes
-          unqualifiedPath = sources_path/* ppath.join */.y1.join(dependencyLocation, subPath);
+          unqualifiedPath = ppath.join(dependencyLocation, subPath);
         } else {
           unqualifiedPath = dependencyLocation;
         }
       }
 
-    return sources_path/* ppath.normalize */.y1.normalize(unqualifiedPath);
+    return ppath.normalize(unqualifiedPath);
   }
   /**
    * Transforms an unqualified path into a qualified path by using the Node resolution algorithm (which automatically
@@ -41381,7 +41643,7 @@ function makeApi(runtimeState, opts) {
     });
 
     if (qualifiedPath) {
-      return sources_path/* ppath.normalize */.y1.normalize(qualifiedPath);
+      return ppath.normalize(qualifiedPath);
     } else {
       const unqualifiedPathForDisplay = getPathForDisplay(unqualifiedPath);
       throw internalTools_makeError(ErrorCode.QUALIFIED_PATH_RESOLUTION_FAILED, `Qualified path resolution failed - none of the candidates can be found on the disk.\n\nSource path: ${unqualifiedPathForDisplay}\n${candidates.map(candidate => `Rejected candidate: ${getPathForDisplay(candidate)}\n`).join(``)}`, {
@@ -41421,7 +41683,7 @@ function makeApi(runtimeState, opts) {
   }
 
   function resolveVirtual(request) {
-    const normalized = sources_path/* ppath.normalize */.y1.normalize(request);
+    const normalized = ppath.normalize(request);
     const resolved = VirtualFS.resolveVirtual(normalized);
     return resolved !== normalized ? resolved : null;
   }
@@ -41448,35 +41710,35 @@ function makeApi(runtimeState, opts) {
     getPackageInformation: locator => {
       const info = getPackageInformation(locator);
       if (info === null) return null;
-      const packageLocation = sources_path/* npath.fromPortablePath */.cS.fromPortablePath(info.packageLocation);
+      const packageLocation = npath.fromPortablePath(info.packageLocation);
       const nativeInfo = { ...info,
         packageLocation
       };
       return nativeInfo;
     },
     findPackageLocator: path => {
-      return findPackageLocator(sources_path/* npath.toPortablePath */.cS.toPortablePath(path));
+      return findPackageLocator(npath.toPortablePath(path));
     },
     resolveToUnqualified: maybeLog(`resolveToUnqualified`, (request, issuer, opts) => {
-      const portableIssuer = issuer !== null ? sources_path/* npath.toPortablePath */.cS.toPortablePath(issuer) : null;
-      const resolution = resolveToUnqualified(sources_path/* npath.toPortablePath */.cS.toPortablePath(request), portableIssuer, opts);
+      const portableIssuer = issuer !== null ? npath.toPortablePath(issuer) : null;
+      const resolution = resolveToUnqualified(npath.toPortablePath(request), portableIssuer, opts);
       if (resolution === null) return null;
-      return sources_path/* npath.fromPortablePath */.cS.fromPortablePath(resolution);
+      return npath.fromPortablePath(resolution);
     }),
     resolveUnqualified: maybeLog(`resolveUnqualified`, (unqualifiedPath, opts) => {
-      return sources_path/* npath.fromPortablePath */.cS.fromPortablePath(resolveUnqualified(sources_path/* npath.toPortablePath */.cS.toPortablePath(unqualifiedPath), opts));
+      return npath.fromPortablePath(resolveUnqualified(npath.toPortablePath(unqualifiedPath), opts));
     }),
     resolveRequest: maybeLog(`resolveRequest`, (request, issuer, opts) => {
-      const portableIssuer = issuer !== null ? sources_path/* npath.toPortablePath */.cS.toPortablePath(issuer) : null;
-      const resolution = resolveRequest(sources_path/* npath.toPortablePath */.cS.toPortablePath(request), portableIssuer, opts);
+      const portableIssuer = issuer !== null ? npath.toPortablePath(issuer) : null;
+      const resolution = resolveRequest(npath.toPortablePath(request), portableIssuer, opts);
       if (resolution === null) return null;
-      return sources_path/* npath.fromPortablePath */.cS.fromPortablePath(resolution);
+      return npath.fromPortablePath(resolution);
     }),
     resolveVirtual: maybeLog(`resolveVirtual`, path => {
-      const result = resolveVirtual(sources_path/* npath.toPortablePath */.cS.toPortablePath(path));
+      const result = resolveVirtual(npath.toPortablePath(path));
 
       if (result !== null) {
-        return sources_path/* npath.fromPortablePath */.cS.fromPortablePath(result);
+        return npath.fromPortablePath(result);
       } else {
         return null;
       }
@@ -41487,8 +41749,8 @@ function makeApi(runtimeState, opts) {
 
 
 function makeManager(pnpapi, opts) {
-  const initialApiPath = sources_path/* npath.toPortablePath */.cS.toPortablePath(pnpapi.resolveToUnqualified(`pnpapi`, null));
-  const initialApiStats = opts.fakeFs.statSync(sources_path/* npath.toPortablePath */.cS.toPortablePath(initialApiPath));
+  const initialApiPath = npath.toPortablePath(pnpapi.resolveToUnqualified(`pnpapi`, null));
+  const initialApiStats = opts.fakeFs.statSync(npath.toPortablePath(initialApiPath));
   const apiMetadata = new Map([[initialApiPath, {
     cache: external_module_.Module._cache,
     instance: pnpapi,
@@ -41497,7 +41759,7 @@ function makeManager(pnpapi, opts) {
   }]]);
 
   function loadApiInstance(pnpApiPath) {
-    const nativePath = sources_path/* npath.fromPortablePath */.cS.fromPortablePath(pnpApiPath); // @ts-expect-error
+    const nativePath = npath.fromPortablePath(pnpApiPath); // @ts-expect-error
 
     const module = new external_module_.Module(nativePath, null); // @ts-expect-error
 
@@ -41546,12 +41808,12 @@ function makeManager(pnpapi, opts) {
     do {
       curr = next;
       findApiPathCache.set(curr, target);
-      next = sources_path/* ppath.dirname */.y1.dirname(curr);
+      next = ppath.dirname(curr);
     } while (curr !== end);
   }
 
   function findApiPathFor(modulePath) {
-    const start = VirtualFS.resolveVirtual(sources_path/* ppath.resolve */.y1.resolve(sources_path/* npath.toPortablePath */.cS.toPortablePath(modulePath)));
+    const start = VirtualFS.resolveVirtual(ppath.resolve(npath.toPortablePath(modulePath)));
     let curr;
     let next = start;
 
@@ -41564,22 +41826,22 @@ function makeManager(pnpapi, opts) {
         return cached;
       }
 
-      const candidate = sources_path/* ppath.join */.y1.join(curr, `.pnp.js`);
+      const candidate = ppath.join(curr, `.pnp.js`);
 
       if (xfs.existsSync(candidate) && xfs.statSync(candidate).isFile()) {
         addToCache(start, curr, candidate);
         return candidate;
       }
 
-      const cjsCandidate = sources_path/* ppath.join */.y1.join(curr, `.pnp.cjs`);
+      const cjsCandidate = ppath.join(curr, `.pnp.cjs`);
 
       if (xfs.existsSync(cjsCandidate) && xfs.statSync(cjsCandidate).isFile()) {
         addToCache(start, curr, cjsCandidate);
         return cjsCandidate;
       }
 
-      next = sources_path/* ppath.dirname */.y1.dirname(curr);
-    } while (curr !== sources_path/* PortablePath.root */.LZ.root);
+      next = ppath.dirname(curr);
+    } while (curr !== PortablePath.root);
 
     addToCache(start, curr, null);
     return null;
@@ -46271,7 +46533,7 @@ module.exports = require("zlib");
 /******/ 	// module exports must be returned from runtime so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(170);
+/******/ 	return __webpack_require__(98);
 /******/ })()
 .default;
 });
