@@ -13,7 +13,7 @@
     "@yarnpkg/libzip": "workspace:^2.2.0",
     "@yarnpkg/monorepo": "workspace:0.0.0",
     "typescript": "^3.9.5",
-    "webpack": "5.0.0-beta.30",
+    "webpack": "5.0.0-beta.31",
     "webpack-cli": "^4.0.0-beta.8"
   },
   "scripts": {
