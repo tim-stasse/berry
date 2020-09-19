@@ -31,25 +31,12 @@ export default class ExecCommand extends BaseCommand {
     const {project} = await Project.find(configuration, this.context.cwd);
 
     return await xfs.mktempPromise(async binFolder => {
-      const builtins = new Map<string, Array<string>>();
-      const env = await scriptUtils.makeScriptEnv({project, binFolder, builtins});
-
-      let name = this.commandName;
-      let args = this.args;
-
-      const builtin = builtins.get(name);
-      if (typeof builtin !== `undefined`) {
-        const [builtinPath, ...builtinArgs] = builtin;
-        name = builtinPath;
-        args = [...builtinArgs, ...args];
-      }
-
-      const {code} = await execUtils.pipevp(name, args, {
+      const {code} = await execUtils.pipevp(this.commandName, this.args, {
         cwd: this.context.cwd,
         stdin: this.context.stdin,
         stdout: this.context.stdout,
         stderr: this.context.stderr,
-        env,
+        env: await scriptUtils.makeScriptEnv({project, binFolder}),
       });
 
       return code;
