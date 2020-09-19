@@ -15,6 +15,7 @@ import {ReportError, Report}                                  from './Report';
 import {StreamReport}                                         from './StreamReport';
 import {Workspace}                                            from './Workspace';
 import {YarnVersion}                                          from './YarnVersion';
+import {binjumper}                                            from './binjumper';
 import * as execUtils                                         from './execUtils';
 import * as formatUtils                                       from './formatUtils';
 import * as miscUtils                                         from './miscUtils';
@@ -29,8 +30,13 @@ enum PackageManager {
 }
 
 async function makePathWrapper(location: PortablePath, name: Filename, argv0: NativePath, args: Array<string> = []) {
-  if (process.platform === `win32`)
-    await xfs.writeFilePromise(ppath.format({dir: location, name, ext: `.cmd`}), `@"${argv0}" ${args.map(arg => `"${arg.replace(`"`, `""`)}"`).join(` `)} %*\n`);
+  if (process.platform === `win32`) {
+    await Promise.all([
+      xfs.writeFilePromise(ppath.format({dir: location, name, ext: `.exe`}), binjumper()),
+      xfs.writeFilePromise(ppath.format({dir: location, name, ext: `.exe.info`}), [argv0, ...args].join(`\n`)),
+      xfs.writeFilePromise(ppath.format({dir: location, name, ext: `.cmd`}), `@"${argv0}" ${args.map(arg => `"${arg.replace(`"`, `""`)}"`).join(` `)} %*\n`),
+    ]);
+  }
 
   await xfs.writeFilePromise(ppath.join(location, name), `#!/bin/sh\nexec "${argv0}" ${args.map(arg => `'${arg.replace(/'/g, `'"'"'`)}'`).join(` `)} "$@"\n`);
   await xfs.chmodPromise(ppath.join(location, name), 0o755);
