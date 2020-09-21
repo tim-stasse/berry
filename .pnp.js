@@ -41580,7 +41580,8 @@ function makeManager(pnpapi, opts) {
   }
 
   function findApiPathFor(modulePath) {
-    const start = VirtualFS.resolveVirtual(sources_path/* ppath.resolve */.y1.resolve(sources_path/* npath.toPortablePath */.cS.toPortablePath(modulePath)));
+    const pModulePath = sources_path/* ppath.resolve */.y1.resolve(sources_path/* npath.toPortablePath */.cS.toPortablePath(modulePath));
+    const start = VirtualFS.resolveVirtual(pModulePath);
     let curr;
     let next = start;
 
@@ -41610,8 +41611,13 @@ function makeManager(pnpapi, opts) {
       next = sources_path/* ppath.dirname */.y1.dirname(curr);
     } while (curr !== sources_path/* PortablePath.root */.LZ.root);
 
-    addToCache(start, curr, null);
-    return null;
+    if (pModulePath === start) {
+      addToCache(start, curr, null);
+      return null;
+    } else {
+      // Can't locate pnpapi from virtual path target, so try from the base
+      return findApiPathFor(sources_path/* npath.fromPortablePath */.cS.fromPortablePath(pModulePath.substr(0, pModulePath.indexOf(`$$virtual`) - 1)));
+    }
   }
 
   function getApiPathFromParent(parent) {
