@@ -9,12 +9,13 @@ JSPATCH="$THIS_DIR"/../../sources/patches/typescript.patch.ts
 FIRST_PR_COMMIT="5d50de3"
 
 HASHES=(
-  # Patch   # Base    # Ranges
-  "426f5a7" "e39bdc3" ">=3.2 <3.5"
-  "426f5a7" "cf7b2d4" ">=3.5 <=3.6"
-  "426f5a7" "cda54b8" ">3.6 <3.7"
-  "2f85932" "e39bdc3" ">=3.7 <3.9"
-  "3af06df" "551f0dd" ">=3.9"
+  # Base    # Patch   # Ranges
+  "e39bdc3" "426f5a7" ">=3.2 <3.5"
+  "cf7b2d4" "426f5a7" ">=3.5 <=3.6"
+  "cda54b8" "426f5a7" ">3.6 <3.7"
+  "e39bdc3" "2f85932" ">=3.7 <3.9"
+  "551f0dd" "3af06df" ">=3.9 <=4.0.3"
+  "69972a3" "cefc8b4" ">4.0.3"
 )
 
 mkdir -p "$TEMP_DIR"
@@ -43,33 +44,33 @@ reset-git() {
 }
 
 build-dir-for() {
-  local HASH="$1"
-  local CHERRY_PICK="$2"
+  local BASE="$1"
+  local PATCH="$2"
 
-  local BUILD_DIR="$TEMP_DIR"/builds/"$HASH"
+  local BUILD_DIR="$TEMP_DIR"/builds/"$BASE"
 
-  if [[ ! -z "$CHERRY_PICK" ]]; then
-    BUILD_DIR="$BUILD_DIR-$CHERRY_PICK"
+  if [[ ! -z "$PATCH" ]]; then
+    BUILD_DIR="$BUILD_DIR-$PATCH"
   fi
 
   echo "$BUILD_DIR"
 }
 
 make-build-for() {
-  local HASH="$1"
-  local CHERRY_PICK="$2"
+  local BASE="$1"
+  local PATCH="$2"
 
-  local BUILD_DIR="$(build-dir-for "$HASH" "$CHERRY_PICK")"
+  local BUILD_DIR="$(build-dir-for "$BASE" "$PATCH")"
 
   if [[ ! -e "$BUILD_DIR" ]]; then
     mkdir -p "$BUILD_DIR"
-    reset-git "$HASH"
+    reset-git "$BASE"
 
-    if [[ ! -z "$CHERRY_PICK" ]]; then
-      if git merge-base --is-ancestor "$HASH" "$CHERRY_PICK"; then
-        git merge --no-edit "$CHERRY_PICK"
+    if [[ ! -z "$PATCH" ]]; then
+      if git merge-base --is-ancestor "$BASE" "$PATCH"; then
+        git merge --no-edit "$PATCH"
       else
-        git cherry-pick "$FIRST_PR_COMMIT"^.."$CHERRY_PICK"
+        git cherry-pick "$FIRST_PR_COMMIT"^.."$PATCH"
       fi
     fi
 
@@ -99,18 +100,18 @@ rm -f "$PATCHFILE" && touch "$PATCHFILE"
 rm -f "$JSPATCH" && touch "$JSPATCH"
 
 while [[ ${#HASHES[@]} -gt 0 ]]; do
-  HASH="${HASHES[0]}"
-  BASE="${HASHES[1]}"
+  BASE="${HASHES[0]}"
+  PATCH="${HASHES[1]}"
   RANGE="${HASHES[2]}"
   HASHES=("${HASHES[@]:3}")
 
   make-build-for "$BASE"
   ORIG_DIR=$(build-dir-for "$BASE")
 
-  make-build-for "$BASE" "$HASH"
-  PATCHED_DIR=$(build-dir-for "$BASE" "$HASH")
+  make-build-for "$BASE" "$PATCH"
+  PATCHED_DIR=$(build-dir-for "$BASE" "$PATCH")
 
-  DIFF="$THIS_DIR"/patch."${HASH}"-on-"${BASE}".diff
+  DIFF="$THIS_DIR"/patch."${PATCH}"-on-"${BASE}".diff
 
   git diff --no-index "$ORIG_DIR" "$PATCHED_DIR" \
     | perl -p -e"s#^--- #semver exclusivity $RANGE\n--- #" \
