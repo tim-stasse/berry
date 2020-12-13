@@ -25,6 +25,9 @@ export default class BuildPluginCommand extends Command {
   @Command.Boolean(`--no-minify`, {description: `Build a plugin for development, without optimizations (minifying, mangling, treeshaking)`})
   noMinify: boolean = false;
 
+  @Command.Array(`--external`, {description: `An array of additional external modules that should be exluded from the built plugin`})
+  externals: Array<string> = [];
+
   static usage: Usage = Command.Usage({
     description: `build a local plugin`,
     details: `
@@ -95,7 +98,7 @@ export default class BuildPluginCommand extends Command {
 
           externals: [
             ({context, request}, callback: any) => {
-              if (request !== name && isDynamicLib(request)) {
+              if (request !== name && (isDynamicLib(request) || this.externals.includes(request))) {
                 callback(null, `commonjs ${request}`);
               } else {
                 callback();
