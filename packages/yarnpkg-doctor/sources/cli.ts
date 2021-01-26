@@ -3,7 +3,7 @@
 import {getPluginConfiguration}                                                                                                                                                                            from '@yarnpkg/cli';
 import {Cache, Configuration, Project, Report, Workspace, structUtils, ProjectLookup, Manifest, Descriptor, HardDependencies, ThrowReport, StreamReport, MessageName, Ident, ResolveOptions, FetchOptions} from '@yarnpkg/core';
 import {PortablePath, npath, ppath, xfs}                                                                                                                                                                   from '@yarnpkg/fslib';
-import {Cli, Command}                                                                                                                                                                                      from 'clipanion';
+import {Cli, Command, Builtins, Option}                                                                                                                                                                    from 'clipanion';
 import globby                                                                                                                                                                                              from 'globby';
 import micromatch                                                                                                                                                                                          from 'micromatch';
 import {Module}                                                                                                                                                                                            from 'module';
@@ -104,7 +104,7 @@ function checkForUnsafeWebpackLoaderAccess(workspace: Workspace, initializerNode
   report.reportWarning(MessageName.UNNAMED, `${prettyLocation}: Webpack configs from non-private packages should avoid referencing loaders without require.resolve`);
 }
 
-function checkForNodeModuleStrings(stringishNode: ts.StringLiteral | ts.NoSubstitutionTemplateLiteral | ts.TemplateExpression , {configuration, report}: {configuration: Configuration, report: Report}) {
+function checkForNodeModuleStrings(stringishNode: ts.StringLiteral | ts.NoSubstitutionTemplateLiteral | ts.TemplateExpression, {configuration, report}: {configuration: Configuration, report: Report}) {
   const match = /node_modules(?!(\\{2}|\/)\.cache)/g.test(stringishNode.getText());
   if (match) {
     const prettyLocation = ast.prettyNodeLocation(configuration, stringishNode);
@@ -161,19 +161,19 @@ function processFile(workspace: Workspace, file: ts.SourceFile, {configuration, 
 
       case ts.SyntaxKind.StringLiteral: {
         const stringNode = node as ts.StringLiteral;
-        checkForNodeModuleStrings(stringNode, {configuration, report} );
+        checkForNodeModuleStrings(stringNode, {configuration, report});
       } break;
 
       case ts.SyntaxKind.NoSubstitutionTemplateLiteral: {
         const stringNode = node as ts.NoSubstitutionTemplateLiteral;
 
-        checkForNodeModuleStrings(stringNode, {configuration, report} );
+        checkForNodeModuleStrings(stringNode, {configuration, report});
       } break;
 
       case ts.SyntaxKind.TemplateExpression: {
         const stringNode = node as ts.TemplateExpression;
 
-        checkForNodeModuleStrings(stringNode, {configuration, report} );
+        checkForNodeModuleStrings(stringNode, {configuration, report});
       } break;
     }
 
@@ -312,11 +312,10 @@ async function processWorkspace(workspace: Workspace, {configuration, fileList, 
 }
 
 class EntryCommand extends Command {
-  @Command.String({required: false})
-  cwd: string = `.`;
+  cwd = Option.String({required: false});
 
   async execute() {
-    const cwd = npath.toPortablePath(npath.resolve(this.cwd));
+    const cwd = npath.toPortablePath(npath.resolve(this.cwd ?? `.`));
 
     const configuration = await Configuration.find(cwd, null, {strict: false});
 
@@ -421,7 +420,7 @@ const cli = new Cli({
 });
 
 cli.register(EntryCommand);
-cli.register(Command.Entries.Version);
+cli.register(Builtins.VersionCommand);
 
 cli.runExit(process.argv.slice(2), {
   stdin: process.stdin,

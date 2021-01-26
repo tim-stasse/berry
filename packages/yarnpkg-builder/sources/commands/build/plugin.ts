@@ -1,6 +1,6 @@
 import {StreamReport, MessageName, Configuration, formatUtils, structUtils} from '@yarnpkg/core';
 import {npath}                                                              from '@yarnpkg/fslib';
-import {Command, Usage, UsageError}                                         from 'clipanion';
+import {Command, Option, Usage, UsageError}                                 from 'clipanion';
 import fs                                                                   from 'fs';
 import path                                                                 from 'path';
 import TerserPlugin                                                         from 'terser-webpack-plugin';
@@ -22,8 +22,9 @@ const getNormalizedName = (name: string) => {
 
 // eslint-disable-next-line arca/no-default-export
 export default class BuildPluginCommand extends Command {
-  @Command.Boolean(`--no-minify`, {description: `Build a plugin for development, without optimizations (minifying, mangling, treeshaking)`})
-  noMinify: boolean = false;
+  static paths = [
+    [`build`, `plugin`],
+  ];
 
   @Command.Array(`--external`, {description: `An array of additional external modules that should be exluded from the built plugin`})
   externals: Array<string> = [];
@@ -42,7 +43,14 @@ export default class BuildPluginCommand extends Command {
     ]],
   });
 
-  @Command.Path(`build`, `plugin`)
+  noMinify = Option.Boolean(`--no-minify`, false, {
+    description: `Build a plugin for development, without optimizations (minifying, mangling, treeshaking)`,
+  });
+
+  sourceMap = Option.Boolean(`--source-map`, false, {
+    description: `Includes a source map in the bundle`,
+  });
+
   async execute() {
     const basedir = process.cwd();
     const portableBaseDir = npath.toPortablePath(basedir);
@@ -51,7 +59,7 @@ export default class BuildPluginCommand extends Command {
     const {name: rawName} = require(`${basedir}/package.json`);
     const name = getNormalizedName(rawName);
     const prettyName = structUtils.prettyIdent(configuration, structUtils.parseIdent(name));
-    const output = `${basedir}/bundles/${name}.js`;
+    const output = path.join(basedir, `bundles/${name}.js`);
 
     let buildErrors: string | null = null;
 
@@ -70,6 +78,10 @@ export default class BuildPluginCommand extends Command {
         const compiler = webpack(makeConfig({
           context: basedir,
           entry: `.`,
+
+          ...this.sourceMap && {
+            devtool: `inline-source-map`,
+          },
 
           ...!this.noMinify && {
             mode: `production`,
@@ -111,18 +123,19 @@ export default class BuildPluginCommand extends Command {
             // get evaluated right now - until after we give it a custom require
             // function that will be able to fetch the dynamic modules.
             {apply: (compiler: webpack.Compiler) => {
-              compiler.hooks.compilation.tap(`MyPlugin`, (compilation: webpack.Compilation) => {
-                compilation.hooks.optimizeChunkAssets.tap(`MyPlugin`, (chunks: Set<webpack.Chunk>) => {
+              compiler.hooks.compilation.tap(`WrapperPlugin`, (compilation: webpack.Compilation) => {
+                compilation.hooks.optimizeChunkAssets.tap(`WrapperPlugin`, (chunks: Set<webpack.Chunk>) => {
                   for (const chunk of chunks) {
                     for (const file of chunk.files) {
-                      // @ts-expect-error
-                      compilation.assets[file] = new webpack.sources.RawSource(
+                      compilation.assets[file] = new webpack.sources.ConcatSource(
                         [
                           `/* eslint-disable */`,
                           `module.exports = {`,
                           `name: ${JSON.stringify(name)},`,
                           `factory: function (require) {`,
-                          compilation.assets[file].source(),
+                        ].join(`\n`),
+                        compilation.assets[file],
+                        [
                           `return plugin;`,
                           `}`,
                           `};`,
@@ -161,9 +174,11 @@ export default class BuildPluginCommand extends Command {
 
     const Mark = formatUtils.mark(configuration);
 
-    if (buildErrors !== null) {
-      report.reportError(MessageName.EXCEPTION, `${Mark.Cross} Failed to build ${prettyName}:`);
-      report.reportError(MessageName.EXCEPTION, `${buildErrors}`);
+    if (report.hasErrors() || buildErrors !== null) {
+      report.reportError(MessageName.EXCEPTION, `${Mark.Cross} Failed to build ${prettyName}`);
+      if (buildErrors) {
+        report.reportError(MessageName.EXCEPTION, `${buildErrors}`);
+      }
     } else {
       report.reportInfo(null, `${Mark.Check} Done building ${prettyName}!`);
       report.reportInfo(null, `${Mark.Question} Bundle path: ${formatUtils.pretty(configuration, output, formatUtils.Type.PATH)}`);

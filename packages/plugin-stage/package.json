@@ -5,7 +5,7 @@
   "main": "./sources/index.ts",
   "dependencies": {
     "@yarnpkg/fslib": "workspace:^2.4.0",
-    "clipanion": "^2.6.2",
+    "clipanion": "^3.0.0-rc.5",
     "tslib": "^1.13.0"
   },
   "peerDependencies": {
@@ -26,7 +26,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/yarnpkg/berry.git"
+    "url": "ssh://git@github.com/yarnpkg/berry.git",
+    "directory": "packages/plugin-stage"
   },
   "publishConfig": {
     "main": "./lib/index.js",

@@ -234,8 +234,7 @@ export class DefaultStream extends Transform {
 // code that simply throws when called. It's all fine and dandy in the context
 // of a web application, but is quite annoying when working with Node projects!
 
-declare const __non_webpack_require__: typeof require | undefined;
-export const dynamicRequire = (typeof __non_webpack_require__ !== `undefined`) ? __non_webpack_require__ : require;
+export const dynamicRequire: NodeRequire = eval(`require`);
 
 export function dynamicRequireNoCache(path: PortablePath) {
   const physicalPath = npath.fromPortablePath(path);
@@ -375,3 +374,7 @@ export function tryParseOptionalBoolean(value: unknown): boolean | undefined | n
     return null;
   }
 }
+
+export type FilterKeys<T extends {}, Filter> = {
+  [K in keyof T]: T[K] extends Filter ? K : never;
+}[keyof T];

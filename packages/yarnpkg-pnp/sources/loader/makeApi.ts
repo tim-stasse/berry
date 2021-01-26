@@ -1,5 +1,5 @@
 import {ppath, Filename}                                                                                    from '@yarnpkg/fslib';
-import {FakeFS, NativePath, Path, PortablePath, VirtualFS, npath}                                           from '@yarnpkg/fslib';
+import {FakeFS, NativePath, PortablePath, VirtualFS, npath}                                                 from '@yarnpkg/fslib';
 import {Module}                                                                                             from 'module';
 
 import {PackageInformation, PackageLocator, PnpApi, RuntimeState, PhysicalPackageLocator, DependencyTarget} from '../types';
@@ -258,14 +258,6 @@ export function makeApi(runtimeState: RuntimeState, opts: MakeApiOptions): PnpAp
   }
 
   /**
-   * Normalize path to posix format.
-   */
-
-  function normalizePath(p: Path) {
-    return npath.toPortablePath(p);
-  }
-
-  /**
    * Forward the resolution to the next resolver (usually the native one)
    */
 
@@ -425,12 +417,12 @@ export function makeApi(runtimeState: RuntimeState, opts: MakeApiOptions): PnpAp
     if (isPathIgnored(location))
       return null;
 
-    let relativeLocation = normalizePath(ppath.relative(runtimeState.basePath, location));
+    let relativeLocation = ppath.relative(runtimeState.basePath, location);
 
     if (!relativeLocation.match(isStrictRegExp))
       relativeLocation = `./${relativeLocation}` as PortablePath;
 
-    if (location.match(isDirRegExp) && !relativeLocation.endsWith(`/`))
+    if (!relativeLocation.endsWith(`/`))
       relativeLocation = `${relativeLocation}/` as PortablePath;
 
     let from = 0;
@@ -561,12 +553,10 @@ export function makeApi(runtimeState: RuntimeState, opts: MakeApiOptions): PnpAp
 
       // No need to use the return value; we just want to check the blacklist status
       findPackageLocator(unqualifiedPath);
-    }
+    } else {
+      // Things are more hairy if it's a package require - we then need to figure out which package is needed, and in
+      // particular the exact version for the given location on the dependency tree
 
-    // Things are more hairy if it's a package require - we then need to figure out which package is needed, and in
-    // particular the exact version for the given location on the dependency tree
-
-    else {
       if (!issuer) {
         throw makeError(
           ErrorCode.API_ERROR,
@@ -710,7 +700,7 @@ export function makeApi(runtimeState: RuntimeState, opts: MakeApiOptions): PnpAp
         const message = error.message.replace(/\n.*/g, ``);
         error.message = message;
 
-        if (!emittedWarnings.has(message)) {
+        if (!emittedWarnings.has(message) && debugLevel !== 0) {
           emittedWarnings.add(message);
           process.emitWarning(error);
         }

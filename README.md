@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://github.com/yarnpkg/berry"><img alt="GitHub Actions status" src="https://github.com/yarnpkg/berry/workflows/Integration/badge.svg"></a>
   <a href="https://discord.gg/yarnpkg"><img alt="Discord Chat" src="https://img.shields.io/discord/226791405589233664.svg"></a>
-  <a href="https://www.npmjs.com/package/@yarnpkg/cli"><img alt="Latest CLI Release" src="https://img.shields.io/npm/v/@yarnpkg/cli/latest?label=npm"></a>
+  <a href="https://github.com/yarnpkg/berry"><img alt="Latest CLI Release" src="https://img.shields.io/npm/v/@yarnpkg/cli/latest?label=latest"></a>
 </p>
 
 ---
@@ -114,6 +114,7 @@ On top of our classic integration tests, we also run Yarn every day against the 
 [![](https://github.com/yarnpkg/berry/workflows/E2E%20Vue-CLI/badge.svg?event=schedule)](https://github.com/yarnpkg/berry/blob/master/.github/workflows/e2e-vue-cli-workflow.yml)<br/>
 </td><td valign="top">
 
+[![](https://github.com/yarnpkg/berry/workflows/E2E%20ESBuild/badge.svg?event=schedule)](https://github.com/yarnpkg/berry/blob/master/.github/workflows/e2e-esbuild-workflow.yml)<br/>
 [![](https://github.com/yarnpkg/berry/workflows/E2E%20ESLint/badge.svg?event=schedule)](https://github.com/yarnpkg/berry/blob/master/.github/workflows/e2e-eslint-workflow.yml)<br/>
 [![](https://github.com/yarnpkg/berry/workflows/E2E%20FSEvents/badge.svg?event=schedule)](https://github.com/yarnpkg/berry/blob/master/.github/workflows/e2e-fsevents-workflow.yml)<br/>
 [![](https://github.com/yarnpkg/berry/workflows/E2E%20Husky/badge.svg?event=schedule)](https://github.com/yarnpkg/berry/blob/master/.github/workflows/e2e-husky-workflow.yml)<br/>
