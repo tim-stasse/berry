@@ -5421,6 +5421,7 @@ __metadata:
     babel-loader: ^8.1.0
     chalk: ^3.0.0
     clipanion: ^3.0.0-rc.5
+    esbuild: ^0.8.36
     esbuild-wasm: ^0.8.36
     filesize: ^4.1.2
     fork-ts-checker-webpack-plugin: ^5.0.0
@@ -11233,6 +11234,15 @@ __metadata:
     esbuild: bin/esbuild
     exit0.js: bin/exit0.js
   checksum: 417584d4453569fa04d828248f4e8b1623950663d1d15b4de34d53e75ab7153db16cf77d62cf4bbb0e69389cb9faa0ac83bdb352e43b2e5e893beba81882c25e
+  languageName: node
+  linkType: hard
+
+"esbuild@npm:^0.8.36":
+  version: 0.8.36
+  resolution: "esbuild@npm:0.8.36"
+  bin:
+    esbuild: bin/esbuild
+  checksum: dede3673b670a66c0db4b4d47020364c27d88ed002a3bb14d4519e2b6070384f272aef7f8eb9b34d8abfb1eee1ed898b994058066f9b7911e50ce4b0411f5d5e
   languageName: node
   linkType: hard
 
