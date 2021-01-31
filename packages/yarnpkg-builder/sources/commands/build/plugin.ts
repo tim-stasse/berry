@@ -26,8 +26,7 @@ export default class BuildPluginCommand extends Command {
     [`build`, `plugin`],
   ];
 
-  @Command.Array(`--external`, {description: `An array of additional external modules that should be exluded from the built plugin`})
-  externals: Array<string> = [];
+  externals: Array<string> = Option.Array(`--external`, [], {description: `An array of additional external modules that should be exluded from the built plugin`});
 
   static usage: Usage = Command.Usage({
     description: `build a local plugin`,
